@@ -1,21 +1,22 @@
 <template>
   <div class="top">
-    <span>欢迎您，{{username}}</span>
+    <span>欢迎您，{{user.username}}</span>
     <span @click="logout"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guanbi"></use></svg></span>
   </div>
 </template>
 
 <script>
+  import { mapActions, mapState } from 'vuex'
+  import { USER_SIGNOUT } from '../../store/user'
+
   export default{
     name: 'Top',
-    data () {
-      return {
-        username: 'xundao'
-      }
-    },
+    computed: mapState({ user: state => state.user }),
     methods: {
+      ...mapActions([USER_SIGNOUT]),
       logout () {
-        console.log('logout')
+        this.USER_SIGNOUT()
+        this.$router.push('/')
       }
     }
   }

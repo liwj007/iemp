@@ -15,6 +15,7 @@
   import Top from './layout/Top'
   import Bottom from './layout/Bottom'
   import MenuBar from './layout/MenuBar'
+  import { mapState } from 'vuex'
   export default{
     name: 'Main',
     data () {
@@ -23,20 +24,21 @@
           {
             type: '项目管理',
             list: [
-              {link: '/school/project', name: '项目申报', icon: '#icon-zhiyesuzhi'},
-              {link: '/school/process', name: '流程管理', icon: '#icon-zhiyesuzhi'}
+              {link: '/' + this.$store.state.user.usertype + '/project', name: '项目申报', icon: '#icon-zhiyesuzhi'},
+              {link: '/' + this.$store.state.user.usertype + '/process', name: '流程管理', icon: '#icon-zhiyesuzhi'}
             ]
           },
           {
             type: '奖励和工作量',
             list: [
-              {link: '/school/performance', name: '奖励认定', icon: '#icon-zhiyesuzhi'},
-              {link: '/school/workload', name: '工作量认定', icon: '#icon-zhiyesuzhi'}
+              {link: '/' + this.$store.state.user.usertype + '/performance', name: '奖励认定', icon: '#icon-zhiyesuzhi'},
+              {link: '/' + this.$store.state.user.usertype + '/workload', name: '工作量认定', icon: '#icon-zhiyesuzhi'}
             ]
           }
         ]
       }
     },
+    computed: mapState({ user: state => state.user }),
     components: {
       Top,
       Bottom,
