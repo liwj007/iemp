@@ -52,23 +52,29 @@
           </router-link>
 
         </li>
-        <p>{{this.item.applyType}}</p>
+        <p>{{this.item.type}}项目申请</p>
       </Menu>
     </section>
     <section slot="footer">
       <div class="wrapper-content">
-        <Table border :columns="columns9" :data="data1" disabled-hover :show-header="showHeader"></Table>
+        <div v-if="this.item.type === '校内'">
+          <Table border :columns="columns9" :data="data1" disabled-hover :show-header="showHeader"></Table>
+        </div>
+        <div v-else-if="this.item.type === '校外'">
+          <Table border :columns="columns9" :data="data2" disabled-hover :show-header="showHeader"></Table>
+        </div>
       </div>
       <div style = "display: bolck; width: 100%; height: 50px; overflow: hidden; padding-left:40%">        
+        <div class = "floating">
+          <Button type="default">取消</Button>
+        </div>
         <div class = "floating">
           <Button type="info">暂存</Button>
         </div>
         <div class = "floating">
-          <Button type="info">提交</Button>
+          <Button type="primary">提交</Button>
         </div>
-        <div class = "floating">
-          <Button type="info">取消</Button>
-        </div>
+        
         
       </div>
     </section>
@@ -76,7 +82,6 @@
 </template>
 <script>
   import Workare from '../../Workare'
-
   export default{
     name: 'proDetail',
     components: {
@@ -89,7 +94,8 @@
           college: '11',
           collegeOpinion: '11',
           professor: '11',
-          professorOpinion: '11'
+          professorOpinion: '11',
+          type: '校内项目申请'
         },
         result: '通过',
         opinion: '',
@@ -115,7 +121,92 @@
           },
           {
             name: '项目名称',
-            content: '基于大数据的酒店宴会定制化服务的研究'
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '项目类型',
+            content: '校内项目'
+          },
+          {
+            name: '项目负责人',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '指导教师',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '指导教师职称',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '所属学院',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '负责人电话',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '联合企业',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '赛项基本情况',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '赛项意义',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '赛项特色',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '比赛方式',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '成绩评定方式',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '企业合作意向',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '建议竞赛器材',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '建议竞赛平台',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '经费预算（元）',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '筹备工作进度',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+          },
+          {
+            name: '竞赛项目方案',
+            content: '<a>上传</a>'
+          }
+        ],
+        data2: [
+          {
+            name: '项目编号',
+            content: '201611688006',
+            cellClassName: {
+              name: 'demo-table-info-cell-age'
+            }
+          },
+          {
+            name: '项目名称',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '项目类型',
@@ -123,91 +214,91 @@
           },
           {
             name: '项目负责人',
-            content: '熊勇'
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '指导教师',
-            content: '曹静'
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '指导教师职称',
-            content: '讲师'
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '所属学院',
-            content: '计算机科学与技术'
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '申请年份',
-            content: '2017年'
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
-            name: '竞赛主办单位',
+            name: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>',
             content: ''
           },
           {
             name: '竞赛协办单位',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '竞赛网址',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '竞赛类别',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '参赛范围',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '涉及学科',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '参赛形式',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '参赛规模',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '竞赛起止时间',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '竞赛项目简介',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '竞赛项目目标',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '经费预算（元）',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '工作量预算（小时）',
-            content: ''
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '竞赛项目方案',
-            content: '<a>下载</a>'
+            content: '<a>上传</a>'
           }
         ]
       }
     },
     mounted () {
-      if (this.$route.params.type === 'inner') {
+      if (this.$route.params.applyType === 'inner') {
         this.item = {
-          applyType: '校内项目申请'
+          type: '校内'
         }
       } else {
         this.item = {
-          applyType: '校外项目申请'
+          type: '校外'
         }
       }
     },
