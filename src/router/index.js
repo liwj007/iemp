@@ -11,6 +11,10 @@ const CheckView = r => require.ensure([], () => r(require('@/components/school/p
 const DetailView = r => require.ensure([], () => r(require('@/components/school/project/DetailView')), 'school')
 
 const Process1 = r => require.ensure([], () => r(require('@/components/school/process/Index')), 'process')
+const ProcessDetail = r => require.ensure([], () => r(require('@/components/school/process/Detail')), 'process')
+const Summary = r => require.ensure([], () => r(require('@/components/school/process/Summary')), 'process')
+const SummaryCheck = r => require.ensure([], () => r(require('@/components/school/process/Check')), 'process')
+const SummaryDetail = r => require.ensure([], () => r(require('@/components/school/process/SummaryDetail')), 'process')
 
 const Main = r => require.ensure([], () => r(require('@/components/Main')), 'Main')
 
@@ -68,8 +72,28 @@ export default new Router({
           component: Process1
         },
         {
+          path: 'process/summary',
+          name: 'summary',
+          component: Summary
+        },
+        {
           path: 'process',
           redirect: 'process/admin'
+        },
+        {
+          path: 'process/detail/:id',
+          name: 'pdetail',
+          component: ProcessDetail
+        },
+        {
+          path: 'process/check/:id',
+          name: 'pCheck',
+          component: SummaryCheck
+        },
+        {
+          path: 'process/summary_detail/:id',
+          name: 'summaryDetail',
+          component: SummaryDetail
         }
       ]
     }

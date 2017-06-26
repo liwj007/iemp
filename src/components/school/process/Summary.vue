@@ -1,7 +1,7 @@
 <template>
   <Workare>
     <section slot="header">
-      <Menu mode="horizontal" active-name="1" @on-select="selectMenu">
+      <Menu mode="horizontal" active-name="2" @on-select="selectMenu">
         <Menu-item name="1">
           <!--<router-link to="/school/project/admin">-->
             项目过程
@@ -126,7 +126,7 @@
             key: 'action',
             align: 'center',
             render: (h, params) => {
-              if (params.row.file === 1) {
+              if (params.row.state === 1) {
                 return h('div', [
                   h('Button', {
                     props: {
@@ -138,23 +138,10 @@
                     },
                     on: {
                       click: () => {
+                        this.$router.push('/school/process/check/' + params.row.code)
                       }
                     }
-                  }, '下载方案'),
-                  h('Button', {
-                    props: {
-                      type: 'primary',
-                      size: 'small'
-                    },
-                    style: {
-                      marginRight: '5px'
-                    },
-                    on: {
-                      click: () => {
-                        this.$router.push('/school/process/detail/' + params.row.code)
-                      }
-                    }
-                  }, '查看详情')
+                  }, '审核')
                 ])
               } else {
                 return h('div', [
@@ -162,21 +149,7 @@
                     attrs: {
                       class: 'unfile'
                     }
-                  }, '未提交方案'),
-                  h('Button', {
-                    props: {
-                      type: 'primary',
-                      size: 'small'
-                    },
-                    style: {
-                      marginRight: '5px'
-                    },
-                    on: {
-                      click: () => {
-                        this.$router.push('/school/process/detail/' + params.row.code)
-                      }
-                    }
-                  }, '查看详情')
+                  }, '未提交')
                 ])
               }
             }
@@ -190,7 +163,7 @@
             admin: '起飞 等3n人',
             teacher: '李雨欣',
             colleague: '计算机',
-            file: 1
+            state: 1
           },
           {
             code: '201611688007',
@@ -199,7 +172,7 @@
             admin: '起飞 等3n人',
             teacher: '李雨欣',
             colleague: '计算机',
-            file: 0
+            state: 0
           }
         ]
       }

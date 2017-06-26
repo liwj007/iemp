@@ -39,18 +39,13 @@
 <template>
   <Workare>
     <section slot="header">
-      <Menu mode="horizontal" active-name="2" @on-select="selectMenu">
+      <Menu mode="horizontal" active-name="1">
         <li class=" back">
-          <router-link to="/school/project/admin">
+          <router-link to="/school/process/admin">
             <Icon type="chevron-left" size="32px"></Icon>
           </router-link>
-
         </li>
-
         <Menu-item name="1">
-          审核意见
-        </Menu-item>
-        <Menu-item name="2">
           项目详情
         </Menu-item>
       </Menu>
@@ -64,16 +59,15 @@
 </template>
 <script>
   import Workare from '../../Workare'
-  import ProjectDetail from './ProjectDetail'
+  import ProjectDetail from '../project/ProjectDetail'
   export default{
-    name: 'Detail',
+    name: 'ProcessDetail',
     components: {
       Workare,
       ProjectDetail
     },
     data () {
       return {
-        showHeader: false,
         item: {
           college: '11',
           collegeOpinion: '11',
@@ -101,18 +95,6 @@
           professor: '22',
           professorOpinion: '22',
           type: '校内'
-        }
-      }
-    },
-    methods: {
-      selectMenu: function (name) {
-        switch (name) {
-          case '1':
-            this.$router.push('/school/project/check/' + this.$route.params.id)
-            break
-          case '2':
-            this.$router.push('/school/project/detail/' + this.$route.params.id)
-            break
         }
       }
     }

@@ -14,6 +14,7 @@
     props: ['type'],
     data () {
       return {
+        showHeader: false,
         columns: [
           {
             title: '名称',
