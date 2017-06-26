@@ -6,13 +6,17 @@
 </template>
 
 <script>
-  import { mapState } from 'vuex'
+  import { mapActions, mapState } from 'vuex'
+  import { USER_SIGNOUT } from '../../store/user'
+
   export default{
     name: 'Top',
     computed: mapState({ user: state => state.user }),
     methods: {
+      ...mapActions([USER_SIGNOUT]),
       logout () {
-        console.log('logout')
+        this.USER_SIGNOUT()
+        this.$router.push('/')
       }
     }
   }
