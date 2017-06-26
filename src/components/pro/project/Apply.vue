@@ -233,8 +233,8 @@
             content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
-            name: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>',
-            content: ''
+            name: '竞赛主办单位',
+            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
           },
           {
             name: '竞赛协办单位',
