@@ -20,6 +20,7 @@ const PerProduct = r => require.ensure([], () => r(require('@/components/school/
 const PerStudent = r => require.ensure([], () => r(require('@/components/school/performance/Student')), 'performance')
 const PerTeacher = r => require.ensure([], () => r(require('@/components/school/performance/Teacher')), 'performance')
 const PerCheck = r => require.ensure([], () => r(require('@/components/school/performance/Check')), 'performance')
+const Workload = r => require.ensure([], () => r(require('@/components/school/performance/Workload')), 'performance')
 
 const Main = r => require.ensure([], () => r(require('@/components/Main')), 'Main')
 
@@ -123,6 +124,11 @@ export default new Router({
           path: 'performance/check/:id',
           name: 'perCheck',
           component: PerCheck
+        },
+        {
+          path: 'workload',
+          name: 'workload',
+          component: Workload
         }
       ]
     }

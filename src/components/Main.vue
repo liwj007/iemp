@@ -31,7 +31,7 @@
             type: '奖励和工作量',
             list: [
               {link: '/school/performance', name: '奖励认定', icon: '#icon-zhiyesuzhi'},
-              {link: '/workload', name: '工作量认定', icon: '#icon-zhiyesuzhi'}
+              {link: '/school/workload', name: '工作量认定', icon: '#icon-zhiyesuzhi'}
             ]
           }
         ]
