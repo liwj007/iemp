@@ -24,7 +24,7 @@
             type: '项目管理',
             list: [
               {link: '/school/project', name: '项目申报', icon: '#icon-zhiyesuzhi'},
-              {link: '/flow', name: '流程管理', icon: '#icon-zhiyesuzhi'}
+              {link: '/school/process', name: '流程管理', icon: '#icon-zhiyesuzhi'}
             ]
           },
           {

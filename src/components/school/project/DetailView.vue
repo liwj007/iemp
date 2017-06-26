@@ -41,7 +41,7 @@
     <section slot="header">
       <Menu mode="horizontal" active-name="2" @on-select="selectMenu">
         <li class=" back">
-          <router-link to="/school/project/admin">
+          <router-link to="/school/project/his">
             <Icon type="chevron-left" size="32px"></Icon>
           </router-link>
 
@@ -61,12 +61,15 @@
       </div>
     </section>
   </Workare>
+
+
 </template>
 <script>
   import Workare from '../../Workare'
   import ProjectDetail from './ProjectDetail'
+
   export default{
-    name: 'School1',
+    name: 'DetailView',
     components: {
       Workare,
       ProjectDetail
@@ -108,10 +111,10 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
-            this.$router.push('/school/project/check/' + this.$route.params.id)
+            this.$router.push('/school/project/checkview/' + this.$route.params.id)
             break
           case '2':
-            this.$router.push('/school/project/detail/' + this.$route.params.id)
+            this.$router.push('/school/project/detailview/' + this.$route.params.id)
             break
         }
       }

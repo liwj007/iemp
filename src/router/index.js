@@ -6,7 +6,12 @@ Vue.use(Router)
 const School1 = r => require.ensure([], () => r(require('@/components/school/project/Index')), 'school')
 const School2 = r => require.ensure([], () => r(require('@/components/school/project/Index2')), 'school')
 const Check = r => require.ensure([], () => r(require('@/components/school/project/Check')), 'school')
-const Detail = r => require.ensure([], () => r(require('@/components/school/project/Detail')), 'detail')
+const Detail = r => require.ensure([], () => r(require('@/components/school/project/Detail')), 'school')
+const CheckView = r => require.ensure([], () => r(require('@/components/school/project/CheckView')), 'school')
+const DetailView = r => require.ensure([], () => r(require('@/components/school/project/DetailView')), 'school')
+
+const Process1 = r => require.ensure([], () => r(require('@/components/school/process/Index')), 'process')
+
 const Main = r => require.ensure([], () => r(require('@/components/Main')), 'Main')
 
 export default new Router({
@@ -46,6 +51,25 @@ export default new Router({
           path: 'project/detail/:id',
           name: 'detail',
           component: Detail
+        },
+        {
+          path: 'project/checkview/:id',
+          name: 'checkview',
+          component: CheckView
+        },
+        {
+          path: 'project/detailview/:id',
+          name: 'detailview',
+          component: DetailView
+        },
+        {
+          path: 'process/admin',
+          name: 'padmin',
+          component: Process1
+        },
+        {
+          path: 'process',
+          redirect: 'process/admin'
         }
       ]
     }

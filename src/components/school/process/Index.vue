@@ -1,17 +1,18 @@
 <template>
   <Workare>
     <section slot="header">
-      <Menu mode="horizontal" active-name="2"  @on-select="selectMenu">
+      <Menu mode="horizontal" active-name="1" @on-select="selectMenu">
         <Menu-item name="1">
           <!--<router-link to="/school/project/admin">-->
-          项目申请库
+            项目过程
           <!--</router-link>-->
 
         </Menu-item>
         <Menu-item name="2">
           <!--<router-link to="/school/project/his">-->
-          项目立项库
+            项目总结
           <!--</router-link>-->
+
         </Menu-item>
       </Menu>
     </section>
@@ -44,7 +45,7 @@
 
   import Workare from '../../Workare'
   export default{
-    name: 'School2',
+    name: 'Process1',
     components: {
       Workare
     },
@@ -125,22 +126,57 @@
             key: 'action',
             align: 'center',
             render: (h, params) => {
-              return h('div', [
-                h('Button', {
-                  props: {
-                    type: 'primary',
-                    size: 'small'
-                  },
-                  style: {
-                    marginRight: '5px'
-                  },
-                  on: {
-                    click: () => {
-                      this.$router.push('/school/project/checkview/' + params.row.code)
+              if (params.row.file === 1) {
+                return h('div', [
+                  h('Button', {
+                    props: {
+                      type: 'primary',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px'
+                    },
+                    on: {
+                      click: () => {
+                      }
                     }
-                  }
-                }, '查看')
-              ])
+                  }, '下载方案'),
+                  h('Button', {
+                    props: {
+                      type: 'primary',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px'
+                    },
+                    on: {
+                      click: () => {
+                      }
+                    }
+                  }, '查看详情')
+                ])
+              } else {
+                return h('div', [
+                  h('span', {
+                    attrs: {
+                      class: 'unfile'
+                    }
+                  }, '未提交方案'),
+                  h('Button', {
+                    props: {
+                      type: 'primary',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px'
+                    },
+                    on: {
+                      click: () => {
+                      }
+                    }
+                  }, '查看详情')
+                ])
+              }
             }
           }
         ],
@@ -151,7 +187,8 @@
             type: '校内项目',
             admin: '起飞 等3n人',
             teacher: '李雨欣',
-            colleague: '计算机'
+            colleague: '计算机',
+            file: 1
           },
           {
             code: '201611688007',
@@ -159,7 +196,8 @@
             type: '校内项目',
             admin: '起飞 等3n人',
             teacher: '李雨欣',
-            colleague: '计算机'
+            colleague: '计算机',
+            file: 0
           }
         ]
       }
@@ -168,10 +206,10 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
-            this.$router.push('/school/project/admin')
+            this.$router.push('/school/process/admin')
             break
           case '2':
-            this.$router.push('/school/project/his')
+            this.$router.push('/school/process/summary')
             break
         }
       }
@@ -199,6 +237,11 @@
   }
   .result{
     padding-top: 20px;
+  }
+
+  .unfile{
+    color: #c0c0c0;
+    padding-right: 9px;
   }
 
 
