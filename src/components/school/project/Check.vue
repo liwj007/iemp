@@ -35,6 +35,13 @@
           <h2>专家意见</h2>
           <p>{{item.professorOpinion}}</p>
         </div>
+        <div class="anchor">
+          <h2>学校认定</h2>
+          <Radio-group v-model="result">
+            <Radio label="通过"></Radio>
+            <Radio label="不通过"></Radio>
+          </Radio-group>
+        </div>
       </div>
 
 
@@ -57,7 +64,8 @@
           collegeOpinion: '11',
           professor: '11',
           professorOpinion: '11'
-        }
+        },
+        result: '通过'
       }
     },
     mounted () {
@@ -107,6 +115,7 @@
 
   .anchor{
     padding-bottom: 30px;
+    padding-left: 25px;
     h2{
       font-size: 20px;
       font-weight: 400;
@@ -117,7 +126,7 @@
     }
   }
   .wrapper-content{
-    padding: 20px 25px;
-    position: relative;
+    padding-top: 20px;
+    /*position: relative;*/
   }
 </style>
