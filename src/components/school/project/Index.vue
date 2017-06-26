@@ -137,7 +137,7 @@
                   },
                   on: {
                     click: () => {
-                      alert(params.row.code)
+                      this.$router.push('/school/project/check/' + params.row.code)
                     }
                   }
                 }, '审核')
@@ -155,7 +155,7 @@
             colleague: '计算机'
           },
           {
-            code: '201611688006',
+            code: '201611688007',
             name: '基于大数据的酒店宴会定制化服务的研究',
             type: '校内项目',
             admin: '起飞 等3n人',
