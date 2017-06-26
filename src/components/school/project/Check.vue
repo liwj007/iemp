@@ -42,6 +42,14 @@
             <Radio label="不通过"></Radio>
           </Radio-group>
         </div>
+        <div class="anchor">
+          <h2>学校评审意见</h2>
+          <Input v-model="opinion" type="textarea" :rows="6" placeholder="请输入..."></Input>
+        </div>
+        <div class="anchor">
+          <Button>取消</Button>
+          <Button type="primary">提交</Button>
+        </div>
       </div>
 
 
@@ -65,7 +73,8 @@
           professor: '11',
           professorOpinion: '11'
         },
-        result: '通过'
+        result: '通过',
+        opinion: ''
       }
     },
     mounted () {
@@ -89,10 +98,10 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
-            this.$router.push('/school/project/check')
+            this.$router.push('/school/project/check/' + this.$route.params.id)
             break
           case '2':
-            this.$router.push('/school/project/detail')
+            this.$router.push('/school/project/detail/' + this.$route.params.id)
             break
         }
       }
@@ -114,8 +123,7 @@
   }
 
   .anchor{
-    padding-bottom: 30px;
-    padding-left: 25px;
+    padding: 0 20px 30px 20px;
     h2{
       font-size: 20px;
       font-weight: 400;

@@ -6,6 +6,7 @@ Vue.use(Router)
 const School1 = r => require.ensure([], () => r(require('@/components/school/project/Index')), 'school')
 const School2 = r => require.ensure([], () => r(require('@/components/school/project/Index2')), 'school')
 const Check = r => require.ensure([], () => r(require('@/components/school/project/Check')), 'school')
+const Detail = r => require.ensure([], () => r(require('@/components/school/project/Detail')), 'detail')
 const Main = r => require.ensure([], () => r(require('@/components/Main')), 'Main')
 
 export default new Router({
@@ -40,6 +41,11 @@ export default new Router({
           path: 'project/check/:id',
           name: 'check',
           component: Check
+        },
+        {
+          path: 'project/detail/:id',
+          name: 'detail',
+          component: Detail
         }
       ]
     }
