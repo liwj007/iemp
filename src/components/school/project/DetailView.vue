@@ -1,8 +1,4 @@
-<style>
-  .ivu-table td.demo-table-info-column{
-    background-color: #f8f8f9;
-  }
-</style>
+
 
 <style scoped lang="less">
 

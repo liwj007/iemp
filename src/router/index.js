@@ -16,6 +16,11 @@ const Summary = r => require.ensure([], () => r(require('@/components/school/pro
 const SummaryCheck = r => require.ensure([], () => r(require('@/components/school/process/Check')), 'process')
 const SummaryDetail = r => require.ensure([], () => r(require('@/components/school/process/SummaryDetail')), 'process')
 
+const PerProduct = r => require.ensure([], () => r(require('@/components/school/performance/Product')), 'performance')
+const PerStudent = r => require.ensure([], () => r(require('@/components/school/performance/Student')), 'performance')
+const PerTeacher = r => require.ensure([], () => r(require('@/components/school/performance/Teacher')), 'performance')
+const PerCheck = r => require.ensure([], () => r(require('@/components/school/performance/Check')), 'performance')
+
 const Main = r => require.ensure([], () => r(require('@/components/Main')), 'Main')
 
 export default new Router({
@@ -94,6 +99,30 @@ export default new Router({
           path: 'process/summary_detail/:id',
           name: 'summaryDetail',
           component: SummaryDetail
+        },
+        {
+          path: 'performance',
+          redirect: 'performance/product'
+        },
+        {
+          path: 'performance/product',
+          name: 'perProduct',
+          component: PerProduct
+        },
+        {
+          path: 'performance/student',
+          name: 'perStudent',
+          component: PerStudent
+        },
+        {
+          path: 'performance/teacher',
+          name: 'perTeacher',
+          component: PerTeacher
+        },
+        {
+          path: 'performance/check/:id',
+          name: 'perCheck',
+          component: PerCheck
         }
       ]
     }
