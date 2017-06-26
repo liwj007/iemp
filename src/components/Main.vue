@@ -15,6 +15,7 @@
   import Top from './layout/Top'
   import Bottom from './layout/Bottom'
   import MenuBar from './layout/MenuBar'
+  import { mapState } from 'vuex'
   export default{
     name: 'Main',
     data () {
@@ -37,6 +38,7 @@
         ]
       }
     },
+    computed: mapState({ user: state => state.user }),
     components: {
       Top,
       Bottom,
