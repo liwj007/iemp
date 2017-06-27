@@ -56,7 +56,7 @@
                   },
                   on: {
                     click: () => {
-                      this.$router.push('/school/system/organization/major/' + params.row.id)
+                      this.$router.push('/school/system/major/' + params.row.id)
                     }
                   }
                 }, '查看专业'),

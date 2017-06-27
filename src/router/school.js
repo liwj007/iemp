@@ -32,11 +32,15 @@ export default {
   component: Main,
   children: [
     {
-      path: 'system/organization',
+      path: 'system',
       component: Organization,
       children: [
         {
           path: '',
+          redirect: 'organization'
+        },
+        {
+          path: 'organization',
           component: OrganizationList
         },
         {

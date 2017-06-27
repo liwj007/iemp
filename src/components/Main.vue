@@ -38,7 +38,7 @@
           {
             type: '其他',
             list: [
-              {link: '/school/system/organization', name: '系统设置', icon: '#icon-zhiyesuzhi'},
+              {link: '/school/system', name: '系统设置', icon: '#icon-zhiyesuzhi'},
               {link: '/school/award', name: '奖励标准', icon: '#icon-zhiyesuzhi'},
               {link: '/school/statistic', name: '评估统计', icon: '#icon-zhiyesuzhi'}
             ]

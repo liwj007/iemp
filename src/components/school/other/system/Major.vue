@@ -58,7 +58,7 @@
                   },
                   on: {
                     click: () => {
-                      this.$router.push('/school/system/organization/class/' + params.row.id)
+                      this.$router.push('/school/system/class/' + params.row.id)
                     }
                   }
                 }, '查看班级'),

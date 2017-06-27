@@ -22,7 +22,7 @@
     name: 'OrganizationList',
     data () {
       return {
-        majorurl: '/school/system/organization/major/' + this.$route.params.id,
+        majorurl: '/school/system/major/' + this.$route.params.id,
         columns: [
           {
             title: '班级名称',
