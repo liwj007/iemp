@@ -1,13 +1,15 @@
-const Main = r => require.ensure([], () => r(require('@/components/Main')), 'Main')
+const proMain = r => require.ensure([], () => r(require('@/components/proMain')), 'proMain')
 const Pro1 = r => require.ensure([], () => r(require('@/components/pro/project/Index')), 'pro')
 const Pro2 = r => require.ensure([], () => r(require('@/components/pro/project/Index2')), 'pro')
 const proCheck = r => require.ensure([], () => r(require('@/components/pro/project/Check')), 'pro')
 const proDetail = r => require.ensure([], () => r(require('@/components/pro/project/Detail')), 'pro')
 const proCheckView = r => require.ensure([], () => r(require('@/components/pro/project/Detail')), 'pro')
 const proApply = r => require.ensure([], () => r(require('@/components/pro/project/Apply')), 'pro')
+const proProcess = r => require.ensure([], () => r(require('@/components/pro/process/Index')), 'pro')
+const proProcessDetail = r => require.ensure([], () => r(require('@/components/pro/process/Detail')), 'pro')
 export default {
   path: '/pro',
-  component: Main,
+  component: proMain,
   children: [
     {
       path: '',
@@ -46,6 +48,20 @@ export default {
       path: 'project/apply/:applyType',
       name: 'proApply',
       component: proApply
+    },
+    {
+      path: 'process',
+      redirect: 'process/admin'
+    },
+    {
+      path: 'process/admin',
+      name: 'proProcessAdmin',
+      component: proProcess
+    },
+    {
+      path: 'process/detail/:id',
+      name: 'proProcessDetail',
+      component: proProcessDetail
     }
   ]
 }
