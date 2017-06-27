@@ -34,6 +34,14 @@
               {link: '/' + this.$store.state.user.usertype + '/performance', name: '奖励认定', icon: '#icon-zhiyesuzhi'},
               {link: '/' + this.$store.state.user.usertype + '/workload', name: '工作量认定', icon: '#icon-zhiyesuzhi'}
             ]
+          },
+          {
+            type: '其他',
+            list: [
+              {link: '/school/system/organization', name: '系统设置', icon: '#icon-zhiyesuzhi'},
+              {link: '/school/award', name: '奖励标准', icon: '#icon-zhiyesuzhi'},
+              {link: '/school/statistic', name: '评估统计', icon: '#icon-zhiyesuzhi'}
+            ]
           }
         ]
       }
