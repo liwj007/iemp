@@ -22,10 +22,52 @@ const PerTeacher = r => require.ensure([], () => r(require('@/components/school/
 const PerCheck = r => require.ensure([], () => r(require('@/components/school/performance/Check')), 'performance')
 const Workload = r => require.ensure([], () => r(require('@/components/school/performance/Workload')), 'performance')
 
+const Organization = r => require.ensure([], () => r(require('@/components/school/other/system/Organization')), 'organization')
+const OrganizationList = r => require.ensure([], () => r(require('@/components/school/other/system/List')), 'organization')
+const Major = r => require.ensure([], () => r(require('@/components/school/other/system/Major')), 'organization')
+const Class = r => require.ensure([], () => r(require('@/components/school/other/system/Class')), 'organization')
+const Student = r => require.ensure([], () => r(require('@/components/school/other/system/Student')), 'organization')
+const Teacher = r => require.ensure([], () => r(require('@/components/school/other/system/Teacher')), 'organization')
+const Right = r => require.ensure([], () => r(require('@/components/school/other/system/Right')), 'organization')
+
 export default {
   path: '/school',
   component: Main,
   children: [
+    {
+      path: 'system',
+      component: Organization,
+      children: [
+        {
+          path: '',
+          redirect: 'organization'
+        },
+        {
+          path: 'organization',
+          component: OrganizationList
+        },
+        {
+          path: 'major/:id',
+          component: Major
+        },
+        {
+          path: 'class/:id',
+          component: Class
+        },
+        {
+          path: 'student',
+          component: Student
+        },
+        {
+          path: 'teacher',
+          component: Teacher
+        },
+        {
+          path: 'right',
+          component: Right
+        }
+      ]
+    },
     {
       path: '',
       redirect: 'project/admin'
