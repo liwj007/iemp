@@ -130,7 +130,7 @@
                 return h('div', [
                   h('Button', {
                     props: {
-                      type: 'primary',
+                      type: 'text',
                       size: 'small'
                     },
                     style: {

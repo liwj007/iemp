@@ -126,7 +126,7 @@
               return h('div', [
                 h('Button', {
                   props: {
-                    type: 'primary',
+                    type: 'text',
                     size: 'small'
                   },
                   style: {
@@ -134,7 +134,7 @@
                   },
                   on: {
                     click: () => {
-                      this.$router.push('/school/performance/teacher_check/' + params.row.code)
+                      this.$router.push('/school/performance/teacher_detail/' + params.row.code)
                     }
                   }
                 }, '查看详情')

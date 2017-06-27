@@ -18,9 +18,13 @@ const SummaryDetail = r => require.ensure([], () => r(require('@/components/scho
 
 const PerProduct = r => require.ensure([], () => r(require('@/components/school/performance/Product')), 'performance')
 const PerStudent = r => require.ensure([], () => r(require('@/components/school/performance/Student')), 'performance')
+const PerStudentDetail = r => require.ensure([], () => r(require('@/components/school/performance/StudentDetail')), 'performance')
 const PerTeacher = r => require.ensure([], () => r(require('@/components/school/performance/Teacher')), 'performance')
+const PerTeacherDetail = r => require.ensure([], () => r(require('@/components/school/performance/TeacherDetail')), 'performance')
 const PerCheck = r => require.ensure([], () => r(require('@/components/school/performance/Check')), 'performance')
 const Workload = r => require.ensure([], () => r(require('@/components/school/performance/Workload')), 'performance')
+const WorkloadCheck = r => require.ensure([], () => r(require('@/components/school/performance/WorkloadCheck')), 'performance')
+const WorkloadDetail = r => require.ensure([], () => r(require('@/components/school/performance/WorkloadDetail')), 'performance')
 
 const Organization = r => require.ensure([], () => r(require('@/components/school/other/system/Organization')), 'organization')
 const OrganizationList = r => require.ensure([], () => r(require('@/components/school/other/system/List')), 'organization')
@@ -226,6 +230,24 @@ export default {
       path: 'workload',
       name: 'workload',
       component: Workload
+    },
+    {
+      path: 'workload/check/:id',
+      component: WorkloadCheck
+    },
+    {
+      path: 'workload/detail/:id',
+      component: WorkloadDetail
+    },
+    {
+      path: 'performance/student_detail/:id',
+      name: 'perStudentDetail',
+      component: PerStudentDetail
+    },
+    {
+      path: 'performance/teacher_detail/:id',
+      name: 'perTeacherDetail',
+      component: PerTeacherDetail
     }
   ]
 }

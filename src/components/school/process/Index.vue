@@ -130,7 +130,7 @@
                 return h('div', [
                   h('Button', {
                     props: {
-                      type: 'primary',
+                      type: 'text',
                       size: 'small'
                     },
                     style: {
@@ -143,7 +143,7 @@
                   }, '下载方案'),
                   h('Button', {
                     props: {
-                      type: 'primary',
+                      type: 'text',
                       size: 'small'
                     },
                     style: {
@@ -165,7 +165,7 @@
                   }, '未提交方案'),
                   h('Button', {
                     props: {
-                      type: 'primary',
+                      type: 'text',
                       size: 'small'
                     },
                     style: {
