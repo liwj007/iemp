@@ -43,7 +43,7 @@ export default {
       component: proCheckView
     },
     {
-      path: 'project/apply/:type',
+      path: 'project/apply/:applyType',
       name: 'proApply',
       component: proApply
     }

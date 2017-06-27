@@ -19,24 +19,13 @@
     <section slot="footer">
         <div  class="filter">
           <div class="title">项目申报列表</div>
-          <!-- <div>
-            <Select v-model="model1" style="width:200px">
-              <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
-            </Select>
-          </div>
-          <div>
-            <Select v-model="model2" style="width:200px">
-              <Option v-for="item in scale" :value="item.value" :key="item">{{ item.label }}</Option>
-            </Select>
-          </div>
-          <div>
-            <Button type="info">筛选</Button>
-          </div>
- -->          <div class="right">
-            <Button type="info" @click = "applyProject('inner')">校内项目申请</Button>
-          </div>
-          <div class="right">
-            <Button type="info" @click = "applyProject('outer')">校外项目申请</Button>
+          <div class="right" style="display:inline-block">
+            <div class="right">
+              <Button type="info" @click = "applyProject('inner')">校内项目申请</Button>
+            </div>
+            <div class="right">
+              <Button type="info" @click = "applyProject('outer')">校外项目申请</Button>
+            </div>
           </div>
         </div>
         <div class="result clear">
