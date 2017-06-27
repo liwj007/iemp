@@ -44,9 +44,7 @@
           <router-link to="/pro/project/admin">
             <Icon type="chevron-left" size="32px"></Icon>
           </router-link>
-
         </li>
-
         <Menu-item name="1">
           审核意见
         </Menu-item>
