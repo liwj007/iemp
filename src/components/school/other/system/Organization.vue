@@ -32,9 +32,16 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
+            this.$router.push('/school/system/organization')
             break
           case '2':
             this.$router.push('/school/system/student')
+            break
+          case '3':
+            this.$router.push('/school/system/teacher')
+            break
+          case '4':
+            this.$router.push('/school/system/right')
             break
         }
       }

@@ -26,6 +26,9 @@ const Organization = r => require.ensure([], () => r(require('@/components/schoo
 const OrganizationList = r => require.ensure([], () => r(require('@/components/school/other/system/List')), 'organization')
 const Major = r => require.ensure([], () => r(require('@/components/school/other/system/Major')), 'organization')
 const Class = r => require.ensure([], () => r(require('@/components/school/other/system/Class')), 'organization')
+const Student = r => require.ensure([], () => r(require('@/components/school/other/system/Student')), 'organization')
+const Teacher = r => require.ensure([], () => r(require('@/components/school/other/system/Teacher')), 'organization')
+const Right = r => require.ensure([], () => r(require('@/components/school/other/system/Right')), 'organization')
 
 export default {
   path: '/school',
@@ -50,6 +53,18 @@ export default {
         {
           path: 'class/:id',
           component: Class
+        },
+        {
+          path: 'student',
+          component: Student
+        },
+        {
+          path: 'teacher',
+          component: Teacher
+        },
+        {
+          path: 'right',
+          component: Right
         }
       ]
     },

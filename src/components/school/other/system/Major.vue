@@ -1,6 +1,6 @@
 <template>
   <div>
-    <Row class="title">
+    <Row class="title-div">
       <Col span="20" class="">
         <Breadcrumb separator=">">
           <Breadcrumb-item href="/school/system/organization">学院列表</Breadcrumb-item>
@@ -18,7 +18,7 @@
 </template>
 <script>
   export default {
-    name: 'OrganizationList',
+    name: 'Major',
     data () {
       return {
         columns: [

@@ -1,6 +1,6 @@
 <template>
      <div>
-       <Row class="title title-font">
+       <Row class="title-div title-font">
          <Col span="20" class="">组织结构列表</Col>
          <Col span="4">
           <Button type="text" style="float: right;color: #2d8cf0;" size="large" @click="modal1 = true"><Icon type="plus"></Icon> 添加学院</Button>
