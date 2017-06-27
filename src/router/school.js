@@ -33,6 +33,7 @@ const Class = r => require.ensure([], () => r(require('@/components/school/other
 const Student = r => require.ensure([], () => r(require('@/components/school/other/system/Student')), 'organization')
 const Teacher = r => require.ensure([], () => r(require('@/components/school/other/system/Teacher')), 'organization')
 const Right = r => require.ensure([], () => r(require('@/components/school/other/system/Right')), 'organization')
+const Statistic = r => require.ensure([], () => r(require('@/components/school/other/Statistic')), 'organization')
 
 const Award = r => require.ensure([], () => r(require('@/components/school/other/award/Award')), 'award')
 const AwardTeacher = r => require.ensure([], () => r(require('@/components/school/other/award/Teacher')), 'award')
@@ -49,6 +50,10 @@ export default {
   path: '/school',
   component: Main,
   children: [
+    {
+      path: 'statistic',
+      component: Statistic
+    },
     {
       path: 'projectlist',
       redirect: 'projectlist/list'
