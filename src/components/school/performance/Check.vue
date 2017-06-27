@@ -171,17 +171,7 @@
 </script>
 
 <style scoped lang="less">
-  .back{
-    float: left;
-    width: 32px;
-    height: inherit;
-    line-height: inherit;
-    border-bottom: 2px solid transparent;
-    text-align: center;
-    a{
-      color: #495060;
-    }
-  }
+
 
   .anchor{
     padding: 0 20px 30px 20px;

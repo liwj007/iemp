@@ -30,10 +30,73 @@ const Student = r => require.ensure([], () => r(require('@/components/school/oth
 const Teacher = r => require.ensure([], () => r(require('@/components/school/other/system/Teacher')), 'organization')
 const Right = r => require.ensure([], () => r(require('@/components/school/other/system/Right')), 'organization')
 
+const Award = r => require.ensure([], () => r(require('@/components/school/other/award/Award')), 'award')
+const AwardTeacher = r => require.ensure([], () => r(require('@/components/school/other/award/Teacher')), 'award')
+const AwardStudent = r => require.ensure([], () => r(require('@/components/school/other/award/Student')), 'award')
+
+const CompetitionList = r => require.ensure([], () => r(require('@/components/school/competition/LevelCheck')), 'competition')
+const CompetitionIndex = r => require.ensure([], () => r(require('@/components/school/competition/Index')), 'competition')
+const CompetitionCheck = r => require.ensure([], () => r(require('@/components/school/competition/Check')), 'competition')
+const CompetitionDetail = r => require.ensure([], () => r(require('@/components/school/competition/Detail')), 'competition')
+const ProjectList = r => require.ensure([], () => r(require('@/components/school/competition/ProjectList')), 'competition')
+const ProjectDetail = r => require.ensure([], () => r(require('@/components/school/competition/ProjectDetail')), 'competition')
+
 export default {
   path: '/school',
   component: Main,
   children: [
+    {
+      path: 'projectlist',
+      redirect: 'projectlist/list'
+    },
+    {
+      path: 'projectlist/list',
+      component: ProjectList
+    },
+    {
+      path: 'projectlist/detail/:id',
+      component: ProjectDetail
+    },
+    {
+      path: 'competition',
+      redirect: 'competition/list'
+    },
+    {
+      path: 'competition/list',
+      component: CompetitionList
+    },
+    {
+      path: 'competition/check',
+      component: CompetitionIndex,
+      children: [
+        {
+          path: 'opinion/:id',
+          component: CompetitionCheck
+        },
+        {
+          path: 'detail/:id',
+          component: CompetitionDetail
+        }
+      ]
+    },
+    {
+      path: 'award',
+      component: Award,
+      children: [
+        {
+          path: '',
+          redirect: 'teacher'
+        },
+        {
+          path: 'teacher',
+          component: AwardTeacher
+        },
+        {
+          path: 'student',
+          component: AwardStudent
+        }
+      ]
+    },
     {
       path: 'system',
       component: Organization,

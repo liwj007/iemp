@@ -108,33 +108,3 @@
     }
   }
 </script>
-
-<style scoped lang="less">
-  .back{
-    float: left;
-    width: 32px;
-    height: inherit;
-    line-height: inherit;
-    border-bottom: 2px solid transparent;
-    text-align: center;
-    a{
-      color: #495060;
-    }
-  }
-
-  .anchor{
-    padding: 0 20px 30px 20px;
-    h2{
-      font-size: 20px;
-      font-weight: 400;
-      margin: 12px 0;;
-    }
-    p{
-      font-size: 16px;
-    }
-  }
-  .wrapper-content{
-    padding-top: 20px;
-    /*position: relative;*/
-  }
-</style>

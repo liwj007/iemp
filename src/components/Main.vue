@@ -22,6 +22,13 @@
       return {
         menu: [
           {
+            type: '竞赛项目级别',
+            list: [
+              {link: '/school/competition', name: '竞赛项目级别认定', icon: '#icon-zhiyesuzhi'},
+              {link: '/school/projectlist', name: '竞赛项目清单', icon: '#icon-zhiyesuzhi'}
+            ]
+          },
+          {
             type: '项目管理',
             list: [
               {link: '/' + this.$store.state.user.usertype + '/project', name: '项目申报', icon: '#icon-zhiyesuzhi'},
