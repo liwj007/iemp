@@ -14,8 +14,8 @@
                     <Input type="text" v-model="item.value2" placeholder="学生学号"></Input>
                 </Col>
                 <Col span="6">
-                    <Select v-model="model1">
-                        <Option v-for="item in studentList" :value="item.value3" :key="item">{{ item.label }}</Option>
+                    <Select v-model="item.value3">
+                        <Option v-for="item in studentList"  :value="item.value" :key="item">{{ item.label }}</Option>
                     </Select>
                 </Col>
                 <Col span="4" offset="1">
