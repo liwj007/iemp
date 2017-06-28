@@ -66,47 +66,95 @@
                 return h('div', [
                   h('Button', {
                     props: {
-                      type: 'primary',
+                      type: 'text',
                       size: 'small'
                     },
                     style: {
-                      marginRight: '5px'
+                      marginRight: '5px',
+                      color: 'blue'
                     },
                     on: {
                       click: () => {
-                        this.$router.push('/pro/performance/register/' + params.row.code)
+                        this.$router.push('/pro/workload/register/' + params.row.code)
                       }
                     }
                   }, '登记')
                 ])
-              } else {
-                return h('span', {
-                  attrs: {
-                    class: 'undo'
-                  }
-                }, '已提交')
+              } else if (params.row.state === 2) {
+                return h('div', [
+                  h('span', {
+                    attrs: {
+                      class: 'undo'
+                    }
+                  }, '已提交 '),
+                  h('Button', {
+                    props: {
+                      type: 'text',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px',
+                      color: 'blue'
+                    },
+                    on: {
+                      click: () => {
+                      }
+                    }
+                  }, '查看')
+                ])
+              } else if (params.row.state === 3) {
+                return h('div', [
+                  h('span', {
+                    attrs: {
+                      class: 'undo'
+                    }
+                  }, '已通过 '),
+                  h('Button', {
+                    props: {
+                      type: 'text',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px',
+                      color: 'blue'
+                    },
+                    on: {
+                      click: () => {
+                      }
+                    }
+                  }, '查看')
+                ])
               }
             }
           }
         ],
         data1: [
           {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
+            code: '201604010128',
+            name: '全国大学生数字媒体作品竞赛',
+            type: '校外项目',
+            admin: '刘云霄',
+            teacher: '欧陆',
+            colleague: '人文与传播学院',
             state: 1
           },
           {
-            code: '201611688007',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
+            code: '201603129874',
+            name: '烟台市大学生创新创业大赛',
+            type: '校外项目',
+            admin: '钱允新',
+            teacher: '李文军',
+            colleague: '中科创业学院',
             state: 2
+          },
+          {
+            code: '201602118467',
+            name: '山东省财税技能大赛',
+            type: '校外项目',
+            admin: '万春华',
+            teacher: '张列',
+            colleague: '统计学院',
+            state: 3
           }
         ]
       }

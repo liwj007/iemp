@@ -8,7 +8,7 @@
           </router-link>
         </li>
         <Menu-item name="1">
-          奖励审核
+          工作量登记
         </Menu-item>
       </Menu>
     </section>
@@ -16,12 +16,22 @@
       <div class="wrapper-content">
         <Table border :columns="columns" :data="data1" disabled-hover :show-header="showHeader"></Table>
         <div style="font-size: 18px;padding: 20px 0 20px 20px;">
-          奖励说明
+          项目成员工作量
         </div>
         <Table border :columns="columns2" :data="data2" disabled-hover></Table>
         <Row>
           <Col span="24">
           <Button type="dashed" long @click="handleAdd" icon="plus-round">添加</Button>
+          </Col>
+        </Row>
+
+        <div style="font-size: 18px;padding: 20px 0 20px 20px;">
+          指导教师工作量
+        </div>
+        <Table border :columns="columns3" :data="data3" disabled-hover></Table>
+        <Row>
+          <Col span="24">
+          <Button type="dashed" long @click="handleAdd2" icon="plus-round">添加</Button>
           </Col>
         </Row>
 
@@ -62,8 +72,8 @@
         ],
         columns2: [
           {
-            title: '参赛队伍编号',
-            key: 'teamsNo',
+            title: '成员学号',
+            key: 'no',
             render: (h, params) => {
               return h('Input', {
                 props: {
@@ -78,16 +88,16 @@
             }
           },
           {
-            title: '参赛队伍',
-            key: 'teams'
+            title: '成员姓名',
+            key: 'name'
           },
           {
-            title: '指导教师',
-            key: 'teachers'
+            title: '成员工作量（小时）',
+            key: 'hours'
           },
           {
-            title: '获得奖项',
-            key: 'award',
+            title: '工作简述',
+            key: 'desc',
             render: (h, params) => {
               return h('Input', {
                 props: {
@@ -105,8 +115,58 @@
                   props: {
                     type: 'text',
                     size: 'small'
+                  },
+                  on: {
+                    click: (index) => {
+                      this.data2.splice(index, 1)
+                    }
                   }
-                }, '上传附件'),
+                }, '删除')
+              ])
+            }
+          }
+        ],
+        columns3: [
+          {
+            title: '教师工号',
+            key: 'no',
+            render: (h, params) => {
+              return h('Input', {
+                props: {
+                  placeholder: '输入参赛队伍编号'
+                },
+                on: {
+                  focus: (index) => {
+                    alert(1)
+                  }
+                }
+              })
+            }
+          },
+          {
+            title: '教师姓名',
+            key: 'name'
+          },
+          {
+            title: '教师工作量（小时）',
+            key: 'hours'
+          },
+          {
+            title: '工作简述',
+            key: 'desc',
+            render: (h, params) => {
+              return h('Input', {
+                props: {
+                  placeholder: '输入获得奖项'
+                }
+              })
+            }
+          },
+          {
+            title: '操作',
+            key: 'action',
+            render: (h, params) => {
+              return h('div', [
                 h('Button', {
                   props: {
                     type: 'text',
@@ -114,7 +174,7 @@
                   },
                   on: {
                     click: (index) => {
-                      this.data2.splice(index, 1)
+                      this.data3.splice(index, 1)
                     }
                   }
                 }, '删除')
@@ -145,9 +205,18 @@
         ],
         data2: [
           {
-            teams: '',
-            teachers: '',
-            award: ''
+            no: '',
+            name: '',
+            hours: '',
+            desc: ''
+          }
+        ],
+        data3: [
+          {
+            no: '',
+            name: '',
+            hours: '',
+            desc: ''
           }
         ]
       }
@@ -155,14 +224,20 @@
     methods: {
       handleAdd () {
         this.data2.push({
-          teams: '',
-          teachers: '',
-          award: ''
+          no: '',
+          name: '',
+          hours: '',
+          desc: ''
         })
       },
-      blur2 () {
-        alert(1)
-      }
+      handleAdd2 () {
+        this.data3.push({
+          no: '',
+          name: '',
+          hours: '',
+          desc: ''
+        })
+      },
     }
   }
 </script>
