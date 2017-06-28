@@ -26,10 +26,13 @@
 <script>
 
   import Workare from '../../Workare'
+  import AlertFrom from './Form'
+  import AlertFrom2 from './Form2'
   export default{
     name: 'proProcess1',
     components: {
-      Workare
+      Workare,
+      AlertFrom
     },
     data () {
       return {
@@ -126,18 +129,7 @@
                         this.$Modal.confirm({
                           title: '添加',
                           render: (h) => {
-                            return h('Input', {
-                              props: {
-                                value: this.value,
-                                autofocus: true,
-                                placeholder: '请输入导师职工号'
-                              },
-                              on: {
-                                input: (val) => {
-                                  this.value = val
-                                }
-                              }
-                            })
+                            return h(AlertFrom)
                           }
                         })
                       }
@@ -159,7 +151,9 @@
                         const content = ''
                         this.$Modal.confirm({
                           title: title,
-                          content: content
+                          render: (h) => {
+                            return h(AlertFrom2)
+                          }
                         })
                       }
                     }
@@ -293,7 +287,8 @@
 
   }
   .ivu-modal-content{
-    top:60px
+    top:60px;
+    width:500px;
   }
   .ivu-modal-body input{
     top:15px;
