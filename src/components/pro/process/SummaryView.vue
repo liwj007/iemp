@@ -19,17 +19,6 @@
       <div class="wrapper-content">
         <Table border :columns="columns" :data="data1" disabled-hover :show-header="showHeader"></Table>
       </div>
-      <div style = "display: bolck; width: 100%; height: 50px; overflow: hidden; padding-left:40%">        
-        <div class = "floating">
-          <Button type="default">取消</Button>
-        </div>
-        <div class = "floating">
-          <Button type="info">暂存</Button>
-        </div>
-        <div class = "floating">
-          <Button type="primary">提交</Button>
-        </div>       
-      </div>
     </section>
   </Workare>
 </template>
@@ -98,35 +87,35 @@
           },
           {
             name: '参赛人数',
-            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '参赛队伍数',
-            content: '<Input v-model="value6" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '经费预算（元）',
-            content: '<Input v-model="value7" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '经费支出（元）',
-            content: '<Input v-model="value8" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '经费说明',
-            content: '<Input v-model="value9" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '获奖数',
-            content: '<Input v-model="value10" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '往年获奖情况',
-            content: '<Input v-model="value11" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '学院获奖情况',
-            content: '<Input v-model="value12" type = "textarea" style="width: 300px"></Input>'
+            content: ''
           },
           {
             name: '附件',

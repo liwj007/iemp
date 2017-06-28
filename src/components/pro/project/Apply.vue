@@ -73,9 +73,7 @@
         </div>
         <div class = "floating">
           <Button type="primary">提交</Button>
-        </div>
-        
-        
+        </div>       
       </div>
     </section>
   </Workare>

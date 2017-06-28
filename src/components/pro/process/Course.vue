@@ -137,11 +137,12 @@
               return h('div', [
                 h('Button', {
                   props: {
-                    type: 'primary',
+                    type: 'text',
                     size: 'small'
                   },
                   style: {
-                    marginRight: '5px'
+                    marginRight: '5px',
+                    color: 'blue'
                   },
                   on: {
                     click: () => {
@@ -177,10 +178,13 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
-            this.$router.push('/pro/project/admin')
+            this.$router.push('/pro/process/admin')
             break
           case '2':
-            this.$router.push('/pro/project/his')
+            this.$router.push('/pro/process/course')
+            break
+          case '3':
+            this.$router.push('/pro/process/summary')
             break
         }
       }

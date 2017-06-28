@@ -8,9 +8,10 @@ const proApply = r => require.ensure([], () => r(require('@/components/pro/proje
 const proProcess = r => require.ensure([], () => r(require('@/components/pro/process/Index')), 'pro')
 const proProcessDetail = r => require.ensure([], () => r(require('@/components/pro/process/Detail')), 'pro')
 const proProcessCourse = r => require.ensure([], () => r(require('@/components/pro/process/Course')), 'pro')
-const proProcessSum = r => require.ensure([], () => r(require('@/components/pro/process/summary')), 'pro')
-
-
+const proProcessSum = r => require.ensure([], () => r(require('@/components/pro/process/Summary')), 'pro')
+const proEditSum = r => require.ensure([], () => r(require('@/components/pro/process/SummaryDetail')), 'pro')
+const proProcessCheck = r => require.ensure([], () => r(require('@/components/pro/process/Check')), 'pro')
+const proSumView = r => require.ensure([], () => r(require('@/components/pro/process/SummaryView')), 'pro')
 export default {
   path: '/pro',
   component: proMain,
@@ -81,6 +82,21 @@ export default {
       path: 'process/summary',
       name: 'proProcessSum',
       component: proProcessSum
+    },
+    {
+      path: 'process/editsum/:id',
+      name: 'proEditSum',
+      component: proEditSum
+    },
+    {
+      path: 'process/check/:id',
+      name: 'proProcessCheck',
+      component: proProcessCheck
+    },
+    {
+      path: 'process/summary_detail/:id',
+      name: 'summaryView',
+      component: proSumView
     }
   ]
 }

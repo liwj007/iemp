@@ -24,26 +24,11 @@
     </section>
     <section slot="footer">
         <div  class="filter">
-          <div class="title">项目立项列表</div>
-          <div>
-            <Select v-model="model1" style="width:200px">
-              <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
-            </Select>
-          </div>
-          <div>
-            <Select v-model="model2" style="width:200px">
-              <Option v-for="item in scale" :value="item.value" :key="item">{{ item.label }}</Option>
-            </Select>
-          </div>
-          <div>
-            <Button type="info">筛选</Button>
-          </div>
-        </div>
+          <div class="title">项目立项列表</div>     
+        </div>     
         <div class="result clear">
           <Table :columns="columns1" :data="data1"></Table>
         </div>
-
-
     </section>
   </Workare>
 </template>
@@ -134,7 +119,7 @@
             render: (h, params) => {
               if (params.row.state === 1) {
                 return h('div', [
-                  h('Button', {
+                  h('a', {
                     props: {
                       type: 'primary',
                       size: 'small'
@@ -144,19 +129,58 @@
                     },
                     on: {
                       click: () => {
-                        this.$router.push('/pro/process/check/' + params.row.code)
+                        this.$router.push('/pro/process/editsum/' + params.row.code)
                       }
                     }
-                  }, '审核')
+                  }, '编辑')
                 ])
-              } else {
+              }
+              else if (params.row.state === 2){
                 return h('div', [
                   h('span', {
                     attrs: {
                       class: 'unfile'
                     }
-                  }, '未提交')
+                  }, '未通过'),
+                  h('a', {
+	                props: {
+	                  type: 'primary',
+	                  size: 'small'
+	                },
+	                  style: {
+	                    marginRight: '5px'
+	                  },
+	                  on: {
+	                    click: () => {
+	                    this.$router.push('/pro/process/editsum/' + params.row.code)
+	                    }
+	                  }
+	                }, '编辑')
                 ])
+              }
+              else {
+				return h('div', [
+                  h('span', {
+                    attrs: {
+                      class: 'unfile'
+                    }
+                  }, '已通过'),
+                
+	              h('a', {
+	                props: {
+	                  type: 'primary',
+	                  size: 'small'
+	                },
+	                  style: {
+	                    marginRight: '5px'
+	                  },
+	                  on: {
+	                    click: () => {
+	                    this.$router.push('/pro/process/check/' + params.row.code)
+	                    }
+	                  }
+	                }, '查看')
+	            ])
               }
             }
           }
@@ -178,8 +202,17 @@
             admin: '起飞 等3n人',
             teacher: '李雨欣',
             colleague: '计算机',
-            state: 0
-          }
+            state: 2
+          },
+          {
+            code: '201611688008',
+            name: '基于大数据的酒店宴会定制化服务的研究',
+            type: '校内项目',
+            admin: '起飞 等3n人',
+            teacher: '李雨欣',
+            colleague: '计算机',
+            state: 3
+          },
         ]
       }
     },
@@ -190,6 +223,9 @@
             this.$router.push('/pro/process/admin')
             break
           case '2':
+            this.$router.push('/pro/process/course')
+            break
+          case '3':
             this.$router.push('/pro/process/summary')
             break
         }

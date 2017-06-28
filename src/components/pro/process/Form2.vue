@@ -5,7 +5,7 @@
             :key="item"
             :label="'成员' + (index + 1)"
             :prop="'items.' + index + '.value'"
-            :rules="{required: true, message: '导师' + (index + 1) +'不能为空', trigger: 'blur'}">
+            :rules="{required: true, message: '成员' + (index + 1) +'不能为空', trigger: 'blur'}">
             <Row>
                 <Col span="6">
                     <Input type="text" v-model="item.value" placeholder="学生姓名"></Input>
@@ -54,7 +54,9 @@
                 formDynamic: {
                     items: [
                         {
+                            value: '',
                             value: ''
+                            
                         }
                     ]
                 }
