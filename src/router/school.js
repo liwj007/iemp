@@ -18,9 +18,13 @@ const SummaryDetail = r => require.ensure([], () => r(require('@/components/scho
 
 const PerProduct = r => require.ensure([], () => r(require('@/components/school/performance/Product')), 'performance')
 const PerStudent = r => require.ensure([], () => r(require('@/components/school/performance/Student')), 'performance')
+const PerStudentDetail = r => require.ensure([], () => r(require('@/components/school/performance/StudentDetail')), 'performance')
 const PerTeacher = r => require.ensure([], () => r(require('@/components/school/performance/Teacher')), 'performance')
+const PerTeacherDetail = r => require.ensure([], () => r(require('@/components/school/performance/TeacherDetail')), 'performance')
 const PerCheck = r => require.ensure([], () => r(require('@/components/school/performance/Check')), 'performance')
 const Workload = r => require.ensure([], () => r(require('@/components/school/performance/Workload')), 'performance')
+const WorkloadCheck = r => require.ensure([], () => r(require('@/components/school/performance/WorkloadCheck')), 'performance')
+const WorkloadDetail = r => require.ensure([], () => r(require('@/components/school/performance/WorkloadDetail')), 'performance')
 
 const Organization = r => require.ensure([], () => r(require('@/components/school/other/system/Organization')), 'organization')
 const OrganizationList = r => require.ensure([], () => r(require('@/components/school/other/system/List')), 'organization')
@@ -29,11 +33,79 @@ const Class = r => require.ensure([], () => r(require('@/components/school/other
 const Student = r => require.ensure([], () => r(require('@/components/school/other/system/Student')), 'organization')
 const Teacher = r => require.ensure([], () => r(require('@/components/school/other/system/Teacher')), 'organization')
 const Right = r => require.ensure([], () => r(require('@/components/school/other/system/Right')), 'organization')
+const Statistic = r => require.ensure([], () => r(require('@/components/school/other/Statistic')), 'organization')
+
+const Award = r => require.ensure([], () => r(require('@/components/school/other/award/Award')), 'award')
+const AwardTeacher = r => require.ensure([], () => r(require('@/components/school/other/award/Teacher')), 'award')
+const AwardStudent = r => require.ensure([], () => r(require('@/components/school/other/award/Student')), 'award')
+
+const CompetitionList = r => require.ensure([], () => r(require('@/components/school/competition/LevelCheck')), 'competition')
+const CompetitionIndex = r => require.ensure([], () => r(require('@/components/school/competition/Index')), 'competition')
+const CompetitionCheck = r => require.ensure([], () => r(require('@/components/school/competition/Check')), 'competition')
+const CompetitionDetail = r => require.ensure([], () => r(require('@/components/school/competition/Detail')), 'competition')
+const ProjectList = r => require.ensure([], () => r(require('@/components/school/competition/ProjectList')), 'competition')
+const ProjectDetail = r => require.ensure([], () => r(require('@/components/school/competition/ProjectDetail')), 'competition')
 
 export default {
   path: '/school',
   component: Main,
   children: [
+    {
+      path: 'statistic',
+      component: Statistic
+    },
+    {
+      path: 'projectlist',
+      redirect: 'projectlist/list'
+    },
+    {
+      path: 'projectlist/list',
+      component: ProjectList
+    },
+    {
+      path: 'projectlist/detail/:id',
+      component: ProjectDetail
+    },
+    {
+      path: 'competition',
+      redirect: 'competition/list'
+    },
+    {
+      path: 'competition/list',
+      component: CompetitionList
+    },
+    {
+      path: 'competition/check',
+      component: CompetitionIndex,
+      children: [
+        {
+          path: 'opinion/:id',
+          component: CompetitionCheck
+        },
+        {
+          path: 'detail/:id',
+          component: CompetitionDetail
+        }
+      ]
+    },
+    {
+      path: 'award',
+      component: Award,
+      children: [
+        {
+          path: '',
+          redirect: 'teacher'
+        },
+        {
+          path: 'teacher',
+          component: AwardTeacher
+        },
+        {
+          path: 'student',
+          component: AwardStudent
+        }
+      ]
+    },
     {
       path: 'system',
       component: Organization,
@@ -163,6 +235,24 @@ export default {
       path: 'workload',
       name: 'workload',
       component: Workload
+    },
+    {
+      path: 'workload/check/:id',
+      component: WorkloadCheck
+    },
+    {
+      path: 'workload/detail/:id',
+      component: WorkloadDetail
+    },
+    {
+      path: 'performance/student_detail/:id',
+      name: 'perStudentDetail',
+      component: PerStudentDetail
+    },
+    {
+      path: 'performance/teacher_detail/:id',
+      name: 'perTeacherDetail',
+      component: PerTeacherDetail
     }
   ]
 }

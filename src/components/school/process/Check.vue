@@ -36,9 +36,9 @@
           <h2>学校评审意见</h2>
           <Input v-model="opinion" type="textarea" :rows="6" placeholder="请输入..."></Input>
         </div>
-        <div class="anchor">
-          <Button>取消</Button>
-          <Button type="primary">提交</Button>
+        <div style="padding: 20px 0 20px 20px;text-align: center;">
+          <Button type="primary" style="width: 150px">提交</Button>
+          <Button type="ghost" style="width: 150px">取消</Button>
         </div>
       </div>
     </section>

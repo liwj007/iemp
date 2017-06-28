@@ -121,7 +121,7 @@
                 return h('div', [
                   h('Button', {
                     props: {
-                      type: 'primary',
+                      type: 'text',
                       size: 'small'
                     },
                     style: {
@@ -129,9 +129,18 @@
                     },
                     on: {
                       click: () => {
+                        this.$router.push('/school/workload/check/' + params.row.id)
                       }
                     }
                   }, '审核')
+                ])
+              } else if ((params.row.state === 3)) {
+                return h('div', [
+                  h('span', {
+                    style: {
+                      color: 'green'
+                    }
+                  }, '已通过')
                 ])
               } else {
                 return h('div', [
@@ -153,7 +162,8 @@
             admin: '起飞 等3n人',
             teacher: '李雨欣',
             colleague: '计算机',
-            state: 2
+            state: 2,
+            id: 1
           },
           {
             code: '201611688007',
@@ -162,7 +172,18 @@
             admin: '起飞 等3n人',
             teacher: '李雨欣',
             colleague: '计算机',
-            state: 1
+            state: 1,
+            id: 2
+          },
+          {
+            code: '201611688008',
+            name: '基于大数据的酒店宴会定制化服务的研究',
+            type: '校内项目',
+            admin: '起飞 等3n人',
+            teacher: '李雨欣',
+            colleague: '计算机',
+            state: 3,
+            id: 3
           }
         ]
       }

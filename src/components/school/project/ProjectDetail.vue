@@ -123,10 +123,7 @@
         data2: [
           {
             name: '项目编号',
-            content: '201611688006',
-            cellClassName: {
-              name: 'demo-table-info-cell-age'
-            }
+            content: '201611688006'
           },
           {
             name: '项目名称',
