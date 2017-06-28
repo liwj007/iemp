@@ -3,7 +3,7 @@
     <section slot="header">
       <Menu mode="horizontal" active-name="1" @on-select="selectMenu">
         <li class=" back">
-          <router-link to="/school/process/summary">
+          <router-link to="/pro/process/summary">
             <Icon type="chevron-left" size="32px"></Icon>
           </router-link>
         </li>
@@ -26,19 +26,12 @@
           <p>{{item.collegeOpinion}}</p>
         </div>
         <div class="anchor">
-          <h2>学校认定</h2>
-          <Radio-group v-model="result">
-            <Radio label="通过"></Radio>
-            <Radio label="不通过"></Radio>
-          </Radio-group>
+          <h2>学校认定</h2>          
+            <p>{{item.school}}</p>          
         </div>
         <div class="anchor">
           <h2>学校评审意见</h2>
-          <Input v-model="opinion" type="textarea" :rows="6" placeholder="请输入..."></Input>
-        </div>
-        <div class="anchor">
-          <Button>取消</Button>
-          <Button type="primary">提交</Button>
+          <p>{{item.schoolOpinion}}</p>
         </div>
       </div>
     </section>
@@ -72,8 +65,11 @@
         }
       } else {
         this.item = {
-          college: '22',
-          collegeOpinion: '22'
+          college: '通过',
+          collegeOpinion: '本工程主要内容包括扩宽河道主槽，修建河道两侧堤防、调整河道比降，布置泄洪建筑物与穿堤建筑物。本项目的实施，是提高市防洪标准的需要，是振兴市域经济的需要，是建设滨水城市的需要，有利于城市合理规划，促进城市开发建设。该项目建成后将会为市安邦河沿岸提供良好的建设条件，使市经济社会健康、和谐、持续发展。',
+          school: '通过',
+          schoolOpinion: '本工程主要内容包括扩宽河道主槽，修建河道两侧堤防、调整河道比降，布置泄洪建筑物与穿堤建筑物。本项目的实施，是提高市防洪标准的需要，是振兴市域经济的需要，是建设滨水城市的需要，有利于城市合理规划，促进城市开发建设。该项目建成后将会为市安邦河沿岸提供良好的建设条件，使市经济社会健康、和谐、持续发展。'
+
         }
       }
     },
@@ -81,10 +77,10 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
-            this.$router.push('/school/process/check/' + this.$route.params.id)
+            this.$router.push('/pro/process/check/' + this.$route.params.id)
             break
           case '2':
-            this.$router.push('/school/process/summary_detail/' + this.$route.params.id)
+            this.$router.push('/pro/process/summary_detail/' + this.$route.params.id)
             break
         }
       }
@@ -119,5 +115,8 @@
   .wrapper-content{
     padding-top: 20px;
     /*position: relative;*/
+  }
+  .wrapper-content p{
+    width: 60%
   }
 </style>

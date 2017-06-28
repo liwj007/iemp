@@ -4,18 +4,18 @@
             v-for="(item, index) in formDynamic.items"
             :key="item"
             :label="'成员' + (index + 1)"
-            :prop="'items.' + index + '.value'"
-            :rules="{required: true, message: '导师' + (index + 1) +'不能为空', trigger: 'blur'}">
+            :prop="'items.' + index + '.value1'"
+            :rules="{required: true, message: '成员' + (index + 1) +'不能为空', trigger: 'blur'}">
             <Row>
                 <Col span="6">
-                    <Input type="text" v-model="item.value" placeholder="学生姓名"></Input>
+                    <Input type="text" v-model="item.value1" placeholder="学生姓名"></Input>
                 </Col>
                 <Col span="6">
-                    <Input type="text" v-model="item.value" placeholder="学生学号"></Input>
+                    <Input type="text" v-model="item.value2" placeholder="学生学号"></Input>
                 </Col>
                 <Col span="6">
-                    <Select v-model="model1">
-                        <Option v-for="item in studentList" :value="item.value" :key="item">{{ item.label }}</Option>
+                    <Select v-model="item.value3">
+                        <Option v-for="item in studentList"  :value="item.value" :key="item">{{ item.label }}</Option>
                     </Select>
                 </Col>
                 <Col span="4" offset="1">
@@ -54,7 +54,10 @@
                 formDynamic: {
                     items: [
                         {
-                            value: ''
+                            value1: '',
+                            value2: '',
+                            value3: ''
+                            
                         }
                     ]
                 }
@@ -75,7 +78,9 @@
             },
             handleAdd () {
                 this.formDynamic.items.push({
-                    value: ''
+                    value1: '',
+                    value2: '',
+                    value3: ''
                 });
             },
             handleRemove (index) {
