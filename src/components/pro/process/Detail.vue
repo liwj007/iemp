@@ -155,6 +155,12 @@
                     },
                     on: {
                       click: () => {
+                        const title = '修改队伍'
+                        const content = ''
+                        this.$Modal.confirm({
+                          title: title,
+                          content: content
+                        })
                       }
                     }
                   }, '修改队伍')
