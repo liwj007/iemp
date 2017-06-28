@@ -17,7 +17,7 @@
   import MenuBar from './layout/MenuBar'
   import { mapState } from 'vuex'
   export default{
-    name: 'Main',
+    name: 'ProMain',
     data () {
       return {
         menu: [

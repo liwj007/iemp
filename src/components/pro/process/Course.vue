@@ -1,7 +1,7 @@
 <template>
   <Workare>
     <section slot="header">
-      <Menu mode="horizontal" active-name="3" @on-select="selectMenu">
+      <Menu mode="horizontal" active-name="2"  @on-select="selectMenu">
         <Menu-item name="1">
           <!--<router-link to="/school/project/admin">-->
             项目报名
@@ -25,6 +25,7 @@
     <section slot="footer">
         <div  class="filter">
           <div class="title">项目立项列表</div>
+          <!--           
           <div>
             <Select v-model="model1" style="width:200px">
               <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
@@ -34,10 +35,11 @@
             <Select v-model="model2" style="width:200px">
               <Option v-for="item in scale" :value="item.value" :key="item">{{ item.label }}</Option>
             </Select>
-          </div>
+          </div> 
           <div>
             <Button type="info">筛选</Button>
           </div>
+          -->
         </div>
         <div class="result clear">
           <Table :columns="columns1" :data="data1"></Table>
@@ -51,7 +53,7 @@
 
   import Workare from '../../Workare'
   export default{
-    name: 'Process1',
+    name: 'proCourse',
     components: {
       Workare
     },
@@ -128,36 +130,26 @@
             key: 'colleague'
           },
           {
-            title: '操作',
+            title: '项目实施方案',
             key: 'action',
             align: 'center',
             render: (h, params) => {
-              if (params.row.state === 1) {
-                return h('div', [
-                  h('Button', {
-                    props: {
-                      type: 'primary',
-                      size: 'small'
-                    },
-                    style: {
-                      marginRight: '5px'
-                    },
-                    on: {
-                      click: () => {
-                        this.$router.push('/pro/process/check/' + params.row.code)
-                      }
+              return h('div', [
+                h('Button', {
+                  props: {
+                    type: 'primary',
+                    size: 'small'
+                  },
+                  style: {
+                    marginRight: '5px'
+                  },
+                  on: {
+                    click: () => {
+                      alert(params.row.code)
                     }
-                  }, '审核')
-                ])
-              } else {
-                return h('div', [
-                  h('span', {
-                    attrs: {
-                      class: 'unfile'
-                    }
-                  }, '未提交')
-                ])
-              }
+                  }
+                }, '上传')
+              ])
             }
           }
         ],
@@ -168,17 +160,15 @@
             type: '校内项目',
             admin: '起飞 等3n人',
             teacher: '李雨欣',
-            colleague: '计算机',
-            state: 1
+            colleague: '计算机'
           },
           {
-            code: '201611688007',
+            code: '201611688006',
             name: '基于大数据的酒店宴会定制化服务的研究',
             type: '校内项目',
             admin: '起飞 等3n人',
             teacher: '李雨欣',
-            colleague: '计算机',
-            state: 0
+            colleague: '计算机'
           }
         ]
       }
@@ -187,10 +177,10 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
-            this.$router.push('/pro/process/admin')
+            this.$router.push('/pro/project/admin')
             break
           case '2':
-            this.$router.push('/pro/process/summary')
+            this.$router.push('/pro/project/his')
             break
         }
       }
@@ -218,11 +208,6 @@
   }
   .result{
     padding-top: 20px;
-  }
-
-  .unfile{
-    color: #c0c0c0;
-    padding-right: 9px;
   }
 
 

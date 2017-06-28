@@ -46,7 +46,7 @@
 
   import Workare from '../../Workare'
   export default{
-    name: 'School2',
+    name: 'pro2',
     components: {
       Workare
     },

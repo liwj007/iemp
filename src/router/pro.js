@@ -7,6 +7,10 @@ const proCheckView = r => require.ensure([], () => r(require('@/components/pro/p
 const proApply = r => require.ensure([], () => r(require('@/components/pro/project/Apply')), 'pro')
 const proProcess = r => require.ensure([], () => r(require('@/components/pro/process/Index')), 'pro')
 const proProcessDetail = r => require.ensure([], () => r(require('@/components/pro/process/Detail')), 'pro')
+const proProcessCourse = r => require.ensure([], () => r(require('@/components/pro/process/Course')), 'pro')
+const proProcessSum = r => require.ensure([], () => r(require('@/components/pro/process/summary')), 'pro')
+
+
 export default {
   path: '/pro',
   component: proMain,
@@ -62,6 +66,21 @@ export default {
       path: 'process/detail/:id',
       name: 'proProcessDetail',
       component: proProcessDetail
+    },
+    {
+      path: 'process/course',
+      name: 'proProcessCourse',
+      component: proProcessCourse
+    },
+    {
+      path: 'process/course/:id',
+      name: 'proProcessCourseId',
+      component: proProcessCourse
+    },
+    {
+      path: 'process/summary',
+      name: 'proProcessSum',
+      component: proProcessSum
     }
   ]
 }
