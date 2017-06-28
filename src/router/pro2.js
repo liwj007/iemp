@@ -1,7 +1,8 @@
-const Main = r => require.ensure([], () => r(require('@/components/Main')), 'Main')
+const Main = r => require.ensure([], () => r(require('@/components/proMain')), 'Main')
 const Pro1 = r => require.ensure([], () => r(require('@/components/pro/performance/Product')), 'pro')
 const Pro2 = r => require.ensure([], () => r(require('@/components/pro/performance/Workload')), 'pro')
 const Register = r => require.ensure([], () => r(require('@/components/pro/performance/Register')), 'pro')
+const WorkloadRegister = r => require.ensure([], () => r(require('@/components/pro/performance/WorkloadRegister')), 'pro')
 
 export default {
   path: '/pro',
@@ -21,6 +22,11 @@ export default {
       path: 'performance/register/:id',
       name: 'perRegister',
       component: Register
+    },
+    {
+      path: 'workload/register/:id',
+      name: 'workloadRegister',
+      component: WorkloadRegister
     }
   ]
 }

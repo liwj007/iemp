@@ -1,6 +1,6 @@
 <template>
-  <div class="top">
-    <span>欢迎您，{{user.username}}</span>
+  <div class="top" style="font-size: 18px">
+    <span><Icon type="person"></Icon> {{user.username}}</span>
     <span @click="logout"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guanbi"></use></svg></span>
   </div>
 </template>
