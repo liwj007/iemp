@@ -4,8 +4,8 @@
       <Col span="20" class="">
         <Breadcrumb separator=">">
           <Breadcrumb-item href="/school/system/organization">学院列表</Breadcrumb-item>
-          <Breadcrumb-item :href="majorurl">计算机科学与技术</Breadcrumb-item>
-          <Breadcrumb-item>软件工程</Breadcrumb-item>
+          <Breadcrumb-item :href="majorurl">金融学院</Breadcrumb-item>
+          <Breadcrumb-item>{{this.$route.params.id}}</Breadcrumb-item>
         </Breadcrumb>
       </Col>
       <Col span="4">
@@ -14,6 +14,11 @@
     </Row>
     <div class="clear">
       <Table :columns="columns" :data="data1"></Table>
+      <div style="margin: 10px;overflow: hidden">
+        <div style="float: right;">
+          <Page :total="17" :current="1" @on-change="changePage"></Page>
+        </div>
+      </div>
     </div>
   </div>
 </template>
@@ -22,11 +27,11 @@
     name: 'Class',
     data () {
       return {
-        majorurl: '/school/system/major/' + this.$route.params.id,
+        majorurl: '/school/system/major/金融学院',
         columns: [
           {
             title: '班级名称',
-            key: 'class'
+            key: 'name'
           },
           {
             title: '所属学院',
@@ -76,18 +81,17 @@
             }
           }
         ],
-        data1: [
-          {
-            major: '计算机科学与技术',
-            college: '计算机科学与技术',
-            class: '计算机科学与技术1班',
-            year: '2017',
-            id: '10001'
-          }
-        ]
+        data1: this.getClassData()
       }
     },
     methods: {
+      getClassData (index) {
+        index = index === undefined ? 1 : index
+        return this.$store.state.classes.slice((index - 1) * 10, index * 10 - 1)
+      },
+      changePage (index) {
+        this.data1 = this.getClassData(index)
+      }
     }
   }
 </script>

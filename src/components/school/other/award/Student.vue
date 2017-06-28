@@ -60,6 +60,11 @@
        </Row>
        <div class="clear">
          <Table :columns="columns" :data="data1"></Table>
+         <div style="margin: 10px;overflow: hidden">
+           <div style="float: right;">
+             <Page :total="this.$store.state.studentAwardStandard.length" :current="page" @on-change="changePage"></Page>
+           </div>
+         </div>
        </div>
      </div>
 
@@ -133,20 +138,8 @@
             }
           }
         ],
-        data1: [
-          {
-            proLevel: '国家级综合类竞赛',
-            awardLevel: '省级一等奖',
-            money: 300,
-            credit: 5
-          },
-          {
-            proLevel: '省部级竞赛',
-            awardLevel: '省级二等奖',
-            money: 200,
-            credit: 2
-          }
-        ]
+        data1: this.getStandard(),
+        page: 1
       }
     },
     methods: {
@@ -157,7 +150,8 @@
           money: this.obj.money,
           credit: this.obj.credit
         }
-        this.data1.push(tmp)
+        this.$store.commit('ADD_STUDENT_AWARD_STANDARD', tmp)
+        this.changePage(this.page)
         this.obj.pro = ''
         this.obj.level1 = ''
         this.obj.level2 = ''
@@ -165,6 +159,14 @@
         this.obj.credit = 0
       },
       cancel () {
+      },
+      getStandard (index) {
+        index = index === undefined ? 1 : index
+        return this.$store.state.studentAwardStandard.slice((index - 1) * 10, index * 10 - 1)
+      },
+      changePage (index) {
+        this.page = index
+        this.data1 = this.getStandard(index)
       }
     }
   }

@@ -4,7 +4,7 @@
       <Col span="20" class="">
         <Breadcrumb separator=">">
           <Breadcrumb-item href="/school/system/organization">学院列表</Breadcrumb-item>
-          <Breadcrumb-item>计算机科学与技术</Breadcrumb-item>
+          <Breadcrumb-item>{{this.$route.params.id}}</Breadcrumb-item>
         </Breadcrumb>
       </Col>
       <Col span="4">
@@ -24,7 +24,7 @@
         columns: [
           {
             title: '专业名称',
-            key: 'major'
+            key: 'name'
           },
           {
             title: '所属学院',
@@ -36,7 +36,7 @@
           },
           {
             title: '专业领导姓名',
-            key: 'name'
+            key: 'leader'
           },
           {
             title: '专业领导联系方式',
@@ -58,7 +58,7 @@
                   },
                   on: {
                     click: () => {
-                      this.$router.push('/school/system/class/' + params.row.id)
+                      this.$router.push('/school/system/class/' + params.row.name)
                     }
                   }
                 }, '查看班级'),
@@ -92,19 +92,13 @@
             }
           }
         ],
-        data1: [
-          {
-            major: '计算机科学与技术',
-            college: '计算机科学与技术',
-            subject: '工科',
-            name: '李继生',
-            phone: '13408085679',
-            id: '10001'
-          }
-        ]
+        data1: this.getMajor()
       }
     },
     methods: {
+      getMajor () {
+        return this.$store.state.majors['金属学院']
+      }
     }
   }
 </script>

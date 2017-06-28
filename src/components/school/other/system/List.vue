@@ -15,6 +15,11 @@
        </Row>
        <div class="clear">
          <Table :columns="columns" :data="data1"></Table>
+         <div style="margin: 10px;overflow: hidden">
+           <div style="float: right;">
+             <Page :total="17" :current="1" @on-change="changePage"></Page>
+           </div>
+         </div>
        </div>
      </div>
 
@@ -30,11 +35,11 @@
         columns: [
           {
             title: '学院名称',
-            key: 'college'
+            key: 'name'
           },
           {
             title: '学院领导姓名',
-            key: 'name'
+            key: 'leader'
           },
           {
             title: '学院领导联系方式',
@@ -56,7 +61,7 @@
                   },
                   on: {
                     click: () => {
-                      this.$router.push('/school/system/major/' + params.row.id)
+                      this.$router.push('/school/system/major/' + params.row.name)
                     }
                   }
                 }, '查看专业'),
@@ -91,20 +96,7 @@
             }
           }
         ],
-        data1: [
-          {
-            college: '计算机科学与技术',
-            name: '李继生',
-            phone: '13408085679',
-            id: '10001'
-          },
-          {
-            college: '马克思哲学',
-            name: '董希',
-            phone: '13408085679',
-            id: '10002'
-          }
-        ]
+        data1: this.getCollegeData()
       }
     },
     methods: {
@@ -118,6 +110,13 @@
         this.data1.push(tmp)
       },
       cancel () {
+      },
+      getCollegeData (index) {
+        index = index === undefined ? 1 : index
+        return this.$store.state.colleges.slice((index - 1) * 10, index * 10 - 1)
+      },
+      changePage (index) {
+        this.data1 = this.getCollegeData(index)
       }
     }
   }

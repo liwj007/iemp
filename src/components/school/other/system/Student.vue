@@ -30,6 +30,11 @@
 
     <div class="clear" style="padding-top: 20px;">
       <Table :columns="columns1" :data="data1"></Table>
+      <div style="margin: 10px;overflow: hidden">
+        <div style="float: right;">
+          <Page :total="this.$store.state.students.length" :current="1" @on-change="changePage"></Page>
+        </div>
+      </div>
     </div>
   </div>
 
@@ -102,7 +107,7 @@
         columns1: [
           {
             title: '序号',
-            type: 'index',
+            key: 'id',
             width: 80,
             align: 'center'
           },
@@ -137,29 +142,17 @@
             key: 'card'
           }
         ],
-        data1: [
-          {
-            no: '201611688006',
-            name: '王五',
-            college: '计算机科学与工程',
-            major: '软件理论',
-            class: '软件理论１班',
-            phone: '18636353232',
-            card: '32112xxxxx3256'
-          },
-          {
-            no: '201611688007',
-            name: '李四',
-            college: '计算机科学与工程',
-            major: '软件理论',
-            class: '软件理论２班',
-            phone: '18636355879',
-            card: '32112xxxxx3257'
-          }
-        ]
+        data1: this.getStudents()
       }
     },
     methods: {
+      getStudents (index) {
+        index = index === undefined ? 1 : index
+        return this.$store.state.students.slice((index - 1) * 10, index * 10 - 1)
+      },
+      changePage (index) {
+        this.data1 = this.getStudents(index)
+      }
     }
   }
 </script>

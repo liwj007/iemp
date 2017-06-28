@@ -27,11 +27,11 @@
         data1: [
           {
             name: '项目编号',
-            content: '201611688006'
+            content: '201606240024'
           },
           {
             name: '项目名称',
-            content: '基于大数据的酒店宴会定制化服务的研究'
+            content: 'ACM国际大学生程序设计竞赛'
           },
           {
             name: '所属学院',
@@ -63,11 +63,11 @@
           },
           {
             name: '竞赛方式',
-            content: ''
+            content: '在线编程答题'
           },
           {
             name: '拟参赛规模',
-            content: ''
+            content: '30人'
           },
           {
             name: '拟申请类别',

@@ -98,8 +98,7 @@
         columns1: [
           {
             title: '项目名称',
-            key: 'name',
-            width: 150
+            key: 'name'
           },
           {
             title: '申请学院',
@@ -137,22 +136,7 @@
             }
           }
         ],
-        data1: [
-          {
-            name: 'ACM',
-            scale: '国家级综合竞赛',
-            category: '一类',
-            college: '计算机',
-            id: 1
-          },
-          {
-            name: '华为创新创业大赛',
-            scale: '其他',
-            category: '三类',
-            college: '计算机',
-            id: 2
-          }
-        ]
+        data1: this.$store.state.projectList
       }
     },
     methods: {

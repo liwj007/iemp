@@ -70,19 +70,19 @@
         <div class="result clear">
           <Row>
             <Col span="6" class="bk">
-              <p class="num">23人</p>
+              <p class="num">781人</p>
               <p class="desc">参与竞赛项目的学生人数</p>
             </Col>
             <Col span="6" class="bk">
-              <p class="num">50.3%</p>
+              <p class="num">16.4%</p>
               <p class="desc">竞赛项目学生参与率</p>
             </Col>
             <Col span="6" class="bk">
-              <p class="num">50.3%</p>
+              <p class="num">100%</p>
               <p class="desc">竞赛项目专业覆盖率</p>
             </Col>
             <Col span="6" class="bk">
-              <p class="num">12人</p>
+              <p class="num">5人</p>
               <p class="desc">竞赛项目涉及到的专业数</p>
             </Col>
           </Row>
@@ -125,92 +125,36 @@
           {
             value: '0',
             label: '2016'
-          },
-          {
-            value: '1',
-            label: '2015'
-          },
-          {
-            value: '2',
-            label: '2014'
-          },
-          {
-            value: '3',
-            label: '2013'
-          },
-          {
-            value: '4',
-            label: '2012'
-          },
-          {
-            value: '5',
-            label: '2011'
           }
         ],
         model1: '0',
         colleges: [
           {
             value: '0',
-            label: '计算机'
-          },
-          {
-            value: '2',
-            label: '机电'
-          },
-          {
-            value: '3',
-            label: '通信'
-          },
-          {
-            value: '4',
-            label: '机械'
-          },
-          {
-            value: '5',
-            label: '经贸'
+            label: '计算机科学与技术学院'
           }
         ],
         model2: '0',
         rank: [
           {
-            name: '第六届“太湖奖”之青年大学生创意创业大赛',
-            user: '王五'
+            name: 'ACM国际大学生程序设计竞赛',
+            user: '421人'
           },
           {
-            name: '2017直通硅谷创新创业大赛',
-            user: '王五'
+            name: '“ORACLE OAEC”杯校园软件与网页设计大赛',
+            user: '277人'
           },
           {
-            name: '2017年广东“众创杯”创业创新大赛（活动对象：全世界创业者）',
-            user: '王五'
+            name: '全国大学生数字媒体作品竞赛',
+            user: '189人'
           },
           {
-            name: '2017年广东“众创杯”创业创新大赛（活动对象：全世界创业者）',
-            user: '王五'
+            name: '中国大学生计算机设计大赛',
+            user: '56人'
           },
           {
-            name: '第八届中国大学生服务外包创新创业大赛（教育部+商务部+无锡政府主办）',
-            user: '王五'
-          },
-          {
-            name: '2017年广东“众创杯”创业创新大赛（活动对象：全世界创业者）',
-            user: '王五'
-          },
-          {
-            name: '2017年广东“众创杯”创业创新大赛（活动对象：全世界创业者）',
-            user: '王五'
-          },
-          {
-            name: '第八届中国大学生服务外包创新创业大赛（教育部+商务部+无锡政府主办）',
-            user: '王五'
-          },
-          {
-            name: '2017年广东“众创杯”创业创新大赛（活动对象：全世界创业者）',
-            user: '王五'
-          },
-          {
-            name: '第八届中国大学生服务外包创新创业大赛（教育部+商务部+无锡政府主办）',
-            user: '王五'
+            name: '全国大学生网络技术大赛',
+            user: '48人'
           }
         ]
       }
@@ -239,11 +183,11 @@
             radius: '80%',
             center: ['50%', '60%'],
             data: [
-              {value: 335, name: '一类'},
-              {value: 310, name: '二类'},
-              {value: 234, name: '三类'},
-              {value: 135, name: '四类'},
-              {value: 1548, name: '五类'}
+              {value: 20, name: '一类'},
+              {value: 25, name: '二类'},
+              {value: 30, name: '三类'},
+              {value: 25, name: '四类'},
+              {value: 0, name: '五类'}
             ],
             itemStyle: {
               emphasis: {

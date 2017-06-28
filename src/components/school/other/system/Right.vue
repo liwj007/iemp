@@ -87,6 +87,11 @@
        </Row>
        <div class="clear">
          <Table :columns="columns" :data="data1"></Table>
+         <div style="margin: 10px;overflow: hidden">
+           <div style="float: right;">
+             <Page :total="this.$store.state.rights.length" :current="page" @on-change="changePage"></Page>
+           </div>
+         </div>
        </div>
      </div>
 
@@ -120,6 +125,7 @@
           no: '',
           rights: []
         },
+        page: 1,
         modal1: false,
         columns: [
           {
@@ -178,32 +184,46 @@
             }
           }
         ],
-        data1: [
-          {
-            no: '1001',
-            name: '李继生',
-            rights: [1, 2, 3]
-          },
-          {
-            no: '1002',
-            name: '诸葛玄',
-            rights: [1, 2, 3]
-          }
-        ]
+        data1: this.getRights()
       }
     },
     methods: {
       ok () {
+        var n = ''
+        for (var i in this.$store.state.teachers) {
+          var u = this.$store.state.teachers[i]
+          if (u.no === this.user.no) {
+            n = u.name
+          }
+        }
+        if (n === '') {
+          this.$Notice.error({
+            title: '错误',
+            desc: '查无此人'
+          })
+          this.user.no = ''
+          this.user.rights = []
+          return
+        }
         var tmp = {
           no: this.user.no,
-          name: '孙鹏',
+          name: n,
           rights: this.user.rights
         }
-        this.data1.push(tmp)
+        this.$store.commit('ADD_USER_RIGHT', tmp)
+        this.changePage(this.page)
         this.user.no = ''
         this.user.rights = []
       },
       cancel () {
+      },
+      getRights (index) {
+        index = index === undefined ? 1 : index
+        return this.$store.state.rights.slice((index - 1) * 10, index * 10 - 1)
+      },
+      changePage (index) {
+        this.page = index
+        this.data1 = this.getRights(index)
       }
     }
   }
