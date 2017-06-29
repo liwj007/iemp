@@ -12,7 +12,7 @@ export default {
     },
     [USER_SIGNOUT] (state) {
       sessionStorage.removeItem('user')
-      Object.keys(state).forEach(k => Vue.delete(state, k))
+      // Object.keys(state).forEach(k => Vue.delete(state, k))
     }
   },
   actions: {

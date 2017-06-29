@@ -15,7 +15,7 @@
     methods: {
       ...mapActions([USER_SIGNOUT]),
       logout () {
-        this.USER_SIGNOUT()
+//        this.USER_SIGNOUT()
         this.$router.push('/')
       }
     }

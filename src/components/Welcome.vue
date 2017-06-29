@@ -80,9 +80,9 @@
               var tmp = rights[x]
               if (this.formCustom.username === tmp.no) {
                 f = true
-                if (tmp.rights.indexOf(4) !== -1) {
+                if (tmp.rights.indexOf(4) !== -1 || tmp.rights.indexOf('4') !== -1) {
                   t = 1
-                } else if (tmp.rights.indexOf(16) !== -1) {
+                } else if (tmp.rights.indexOf(16) !== -1 || tmp.rights.indexOf('16') !== -1) {
                   t = 2
                 } else {
                   t = -1
@@ -104,7 +104,7 @@
                 this.$Message.error('登录失败!')
               }
             } else {
-              this.$Message.error('登录失败!')
+              this.$Message.error('登录失败2!')
             }
           }
         })

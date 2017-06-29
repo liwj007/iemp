@@ -6,7 +6,7 @@ import state from './state'
 import actions from './actions'
 import getters from './getters'
 
- import user from './user'
+import user from './user'
 
 Vue.use(Vuex)
 
