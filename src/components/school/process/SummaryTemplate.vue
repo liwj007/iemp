@@ -86,7 +86,7 @@
           },
           {
             name: '附件',
-            content: '<a href=' + this.$store.state.file2 + '>下载</a>'
+            content: '<a href=' + this.$store.state.file2 + ' download="项目立项申报书">下载</a>'
           }
         ]
       }

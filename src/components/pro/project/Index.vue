@@ -111,7 +111,7 @@ export default{
         },
         {
           title: '所属学院',
-          key: 'colleague'
+          key: 'college'
         },
         {
           title: '操作',
@@ -138,24 +138,7 @@ export default{
           }
         }
       ],
-      data1: [
-        {
-          code: '201611688006',
-          name: '基于大数据的酒店宴会定制化服务的研究',
-          type: '校内项目',
-          admin: '起飞 等3n人',
-          teacher: '李雨欣',
-          colleague: '计算机'
-        },
-        {
-          code: '201611688007',
-          name: '基于大数据的酒店宴会定制化服务的研究',
-          type: '校内项目',
-          admin: '起飞 等3n人',
-          teacher: '李雨欣',
-          colleague: '计算机'
-        }
-      ]
+      data1: this.$store.state.applyList
     }
   },
   methods: {

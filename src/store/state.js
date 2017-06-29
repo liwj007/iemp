@@ -1,7 +1,10 @@
 const state = {
   username: 'Admin-233',
-  file1: 'http://gr.uestc.edu.cn/attached/papers/21/201706/20170623134122_93637.docx',
-  file2: 'http://gr.uestc.edu.cn/attached/papers/21/201706/20170623134122_93637.docx',
+  applyList: [
+    {'code': '201705040069', 'name': '“ORACLE OAEC”杯校园软件与网页设计大赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '熊杰希', 'college': '计算机科学与技术学院'}
+  ],
+  file1: 'static/files/项目立项申报书.doc',
+  file2: 'static/files/项目总结报告书.doc',
   workloadDetail: {
     '201604010128': {
       'code': '201604010128',

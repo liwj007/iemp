@@ -114,7 +114,7 @@
           },
           {
             name: '竞赛项目方案',
-            content: '<a href=' + this.$store.state.file1 + '>下载</a>'
+            content: '<a href=' + this.$store.state.file1 + ' download="项目立项申报书">下载</a>'
           }
         ],
         data2: [
@@ -196,7 +196,7 @@
           },
           {
             name: '竞赛项目方案',
-            content: '<a href=' + this.$store.state.file1 + '>下载</a>'
+            content: '<a href=' + this.$store.state.file1 + ' download="项目立项申报书">下载</a>'
           }
         ]
       }

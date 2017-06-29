@@ -28,8 +28,8 @@
         </Radio-group>
       </Form-item>
       <Form-item>
-        <Button type="primary" @click="handleSubmit('formCustom')">提交</Button>
-        <Button type="ghost" @click="handleReset('formCustom')" style="margin-left: 8px">重置</Button>
+        <Button type="primary" @click="handleSubmit('formCustom')">登录</Button>
+        <Button type="ghost" @click="handleReset('formCustom')" style="margin-left: 8px">取消</Button>
       </Form-item>
     </Form>
   </div>
