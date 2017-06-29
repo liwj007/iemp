@@ -17,7 +17,7 @@
          <Table :columns="columns" :data="data1"></Table>
          <div style="margin: 10px;overflow: hidden">
            <div style="float: right;">
-             <Page :total="17" :current="1" @on-change="changePage"></Page>
+             <Page :total="this.$store.state.colleges.length" :current="1" @on-change="changePage"></Page>
            </div>
          </div>
        </div>
@@ -102,18 +102,17 @@
     methods: {
       ok () {
         var tmp = {
-          college: this.value,
-          name: '戴佩',
-          phone: '13885698652',
-          id: '10003'
+          name: this.value,
+          leader: '李荣',
+          phone: '13100001111'
         }
-        this.data1.push(tmp)
+        this.$store.commit('ADD_COLLEGE', tmp)
       },
       cancel () {
       },
       getCollegeData (index) {
         index = index === undefined ? 1 : index
-        return this.$store.state.colleges.slice((index - 1) * 10, index * 10 - 1)
+        return this.$store.state.colleges.slice((index - 1) * 10, index * 10)
       },
       changePage (index) {
         this.data1 = this.getCollegeData(index)

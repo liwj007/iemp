@@ -1,5 +1,7 @@
 const state = {
   username: 'Admin-233',
+  file1: 'http://gr.uestc.edu.cn/attached/papers/21/201706/20170623134122_93637.docx',
+  file2: 'http://gr.uestc.edu.cn/attached/papers/21/201706/20170623134122_93637.docx',
   workloadDetail: {
     '201604010128': {
       'code': '201604010128',
@@ -295,7 +297,7 @@ const state = {
       type: '校外项目',
       admin: '曹阳',
       teacher: '梁静婧',
-      college: '计算机科学与技术',
+      college: '计算机科学与技术学院',
       applyYear: 2016,
       hostCmp: 'ACM学会',
       coCmp: '',
@@ -407,11 +409,11 @@ const state = {
     }
   },
   toCheckProjectList: [
-    {'code': '201606240024', 'name': 'ACM国际大学生程序设计竞赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '梁静婧', 'college': '计算机科学与技术'},
+    {'code': '201606240024', 'name': 'ACM国际大学生程序设计竞赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '梁静婧', 'college': '计算机科学与技术学院'},
     {'code': '201603110018', 'name': '山东省电子商务专业竞赛', 'type': '校外项目', 'admin': '李锐', 'teacher': '谭玲玲，张杰', 'college': '外国语学院'},
     {'code': '201604280027', 'name': '全国企业竞争模拟大赛', 'type': '校外项目', 'admin': '张聪', 'teacher': '李静宜', 'college': '工商管理学院'},
     {'code': '201604090122', 'name': '政治理论知识竞赛', 'type': '校内项目', 'admin': '张凡', 'college': '公共管理学院'},
-    {'code': '201701100062', 'name': '全国新闻出版行业平面设计大赛', 'type': '校外项目', 'admin': '徐良卿', 'teacher': '葛涛', 'college': '文法学院'},
+    {'code': '201701100062', 'name': '全国新闻出版行业平面设计大赛', 'type': '校外项目', 'admin': '徐良卿', 'teacher': '葛涛', 'college': '人文与传播学院'},
     {'code': '201705040069', 'name': '“ORACLE OAEC”杯校园软件与网页设计大赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '熊杰希', 'college': '计算机科学与技术学院'},
     {'code': '201705070072', 'name': '全国品牌策划大赛', 'type': '校外项目', 'admin': '王旭东', 'teacher': '李逸然', 'college': '外国语学院'},
     {'code': '201606010128', 'name': '校内微电影大赛', 'type': '校内项目', 'admin': '李鹏飞', 'college': '计算机科学与技术学院'}
@@ -426,7 +428,7 @@ const state = {
     {'name': '全国管理决策模拟大赛', 'college': '公共管理学院', 'scale': '全国', 'category': '二类'}
   ],
   competitionList: [
-    {'name': 'ACM国际大学生程序设计竞赛', 'college': '计算机科学与技术', 'scale': '国际', 'category': '一类'},
+    {'name': 'ACM国际大学生程序设计竞赛', 'college': '计算机科学与技术学院', 'scale': '国际', 'category': '一类'},
     {'name': 'iCAN创新创业大赛', 'college': '信息与电子工程学院', 'scale': '国际', 'category': '一类'},
     {'name': '全国大学生数学竞赛', 'college': '数学与信息科学学院', 'scale': '全国', 'category': '一类'},
     {'name': '全国企业竞争模拟大赛', 'college': '工商管理学院', 'scale': '全国', 'category': '一类'},

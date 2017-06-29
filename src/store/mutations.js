@@ -18,6 +18,9 @@ const mutations = {
   PROJECT_CHECK_CP (state, item) {
     state.toCheckProjectList.splice(0, 1)
     state.checkedProjectList.push(item)
+  },
+  ADD_COLLEGE (state, item) {
+    state.colleges.push(item)
   }
 }
 

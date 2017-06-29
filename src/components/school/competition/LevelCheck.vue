@@ -16,11 +16,7 @@
     <section slot="footer">
       <div  class="title-div">
         <div class="title-font">竞赛项目列表</div>
-        <div>
-          <Select v-model="model1" style="width:200px">
-            <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
-          </Select>
-        </div>
+        <CollegeSelection :college="model1"></CollegeSelection>
         <div>
           <Select v-model="model2" style="width:200px">
             <Option v-for="item in category" :value="item.value" :key="item">{{ item.label }}</Option>
@@ -42,40 +38,16 @@
 <script>
 
   import Workare from '../../Workare'
+  import CollegeSelection from '../template/CollegeSelection'
   export default{
     name: 'CompetitionList',
     components: {
-      Workare
+      Workare,
+      CollegeSelection
     },
     data () {
       return {
-        collegeList: [
-          {
-            value: '0',
-            label: '全部申请学院'
-          },
-          {
-            value: '1',
-            label: '计算机'
-          },
-          {
-            value: '2',
-            label: '机电'
-          },
-          {
-            value: '3',
-            label: '通信'
-          },
-          {
-            value: '4',
-            label: '机械'
-          },
-          {
-            value: '5',
-            label: '经贸'
-          }
-        ],
-        model1: '0',
+        model1: '全部申请学院',
         category: [
           {
             value: '0',
@@ -92,6 +64,14 @@
           {
             value: '3',
             label: '三类'
+          },
+          {
+            value: '4',
+            label: '四类'
+          },
+          {
+            value: '5',
+            label: '五类'
           }
         ],
         model2: '0',

@@ -10,10 +10,10 @@
            @on-ok="ok"
            @on-cancel="cancel">
            <Form :model="user" label-position="top">
-             <Form-item label="标题">
+             <Form-item label="职工号/学号">
                <Input v-model="user.no"></Input>
              </Form-item>
-             <Form-item label="爱好" prop="interest">
+             <Form-item label="用户权限" prop="interest">
                <Checkbox-group v-model="user.rights">
                  <Row>
                    <Col span="12">
@@ -219,7 +219,7 @@
       },
       getRights (index) {
         index = index === undefined ? 1 : index
-        return this.$store.state.rights.slice((index - 1) * 10, index * 10 - 1)
+        return this.$store.state.rights.slice((index - 1) * 10, index * 10)
       },
       changePage (index) {
         this.page = index

@@ -86,7 +86,7 @@
           },
           {
             name: '附件',
-            content: '<a>下载</a>'
+            content: '<a href=' + this.$store.state.file2 + '>下载</a>'
           }
         ]
       }

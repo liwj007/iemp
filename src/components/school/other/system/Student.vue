@@ -8,11 +8,7 @@
   <div>
     <div  class="title-div">
       <div class="title-font">学生用户列表</div>
-      <div>
-        <Select v-model="model1" style="width:200px">
-          <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
-        </Select>
-      </div>
+      <CollegeSelection :college="model1"></CollegeSelection>
       <div>
         <Select v-model="model2" style="width:200px">
           <Option v-for="item in years" :value="item.value" :key="item">{{ item.label }}</Option>
@@ -43,37 +39,15 @@
 
 
 <script>
+  import CollegeSelection from '../../template/CollegeSelection'
   export default{
     name: 'Student',
+    components: {
+      CollegeSelection
+    },
     data () {
       return {
-        collegeList: [
-          {
-            value: '0',
-            label: '全部申请学院'
-          },
-          {
-            value: '1',
-            label: '计算机'
-          },
-          {
-            value: '2',
-            label: '机电'
-          },
-          {
-            value: '3',
-            label: '通信'
-          },
-          {
-            value: '4',
-            label: '机械'
-          },
-          {
-            value: '5',
-            label: '经贸'
-          }
-        ],
-        model1: '0',
+        model1: '全部申请学院',
         years: [
           {
             value: '0',
@@ -148,7 +122,7 @@
     methods: {
       getStudents (index) {
         index = index === undefined ? 1 : index
-        return this.$store.state.students.slice((index - 1) * 10, index * 10 - 1)
+        return this.$store.state.students.slice((index - 1) * 10, index * 10)
       },
       changePage (index) {
         this.data1 = this.getStudents(index)
