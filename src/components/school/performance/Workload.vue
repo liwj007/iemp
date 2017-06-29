@@ -110,14 +110,14 @@
           },
           {
             title: '所属学院',
-            key: 'colleague'
+            key: 'college'
           },
           {
             title: '操作',
             key: 'action',
             align: 'center',
             render: (h, params) => {
-              if (params.row.state === 2) {
+              if (params.row.state === 1) {
                 return h('div', [
                   h('Button', {
                     props: {
@@ -129,12 +129,12 @@
                     },
                     on: {
                       click: () => {
-                        this.$router.push('/school/workload/check/' + params.row.id)
+                        this.$router.push('/school/workload/check/' + params.row.code)
                       }
                     }
                   }, '审核')
                 ])
-              } else if ((params.row.state === 3)) {
+              } else if ((params.row.state === 2)) {
                 return h('div', [
                   h('span', {
                     style: {
@@ -154,38 +154,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            state: 2,
-            id: 1
-          },
-          {
-            code: '201611688007',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            state: 1,
-            id: 2
-          },
-          {
-            code: '201611688008',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            state: 3,
-            id: 3
-          }
-        ]
+        data1: this.$store.state.worloadList
       }
     },
     methods: {

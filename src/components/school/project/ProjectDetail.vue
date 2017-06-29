@@ -1,8 +1,8 @@
 <template>
-  <div v-if="type === '校外'">
+  <div v-if="type === '校外项目'">
     <Table border :columns="columns" :data="data1" disabled-hover :show-header="showHeader"></Table>
   </div>
-  <div v-else-if="type === '校内'">
+  <div v-else-if="type === '校内项目'">
     <Table border :columns="columns" :data="data2" disabled-hover :show-header="showHeader"></Table>
   </div>
   <div v-else>111</div>
@@ -11,7 +11,7 @@
 <script>
   export default{
     name: 'projectDetail',
-    props: ['type'],
+    props: ['type', 'item'],
     data () {
       return {
         showHeader: false,
@@ -30,90 +30,87 @@
         data1: [
           {
             name: '项目编号',
-            content: '201611688006',
-            cellClassName: {
-              name: 'demo-table-info-cell-age'
-            }
+            content: this.item.code
           },
           {
             name: '项目名称',
-            content: '基于大数据的酒店宴会定制化服务的研究'
+            content: this.item.name
           },
           {
             name: '项目类型',
-            content: '校外项目'
+            content: this.item.type
           },
           {
             name: '项目负责人',
-            content: '熊勇'
+            content: this.item.admin
           },
           {
             name: '指导教师',
-            content: '曹静'
+            content: this.item.teacher
           },
           {
             name: '指导教师职称',
-            content: '讲师'
+            content: this.item.title
           },
           {
             name: '所属学院',
-            content: '计算机科学与技术'
+            content: this.item.college
           },
           {
             name: '申请年份',
-            content: '2017年'
+            content: this.item.applyYear
           },
           {
             name: '竞赛主办单位',
-            content: ''
+            content: this.item.hostCmp
           },
           {
             name: '竞赛协办单位',
-            content: ''
+            content: this.item.coCmp
           },
           {
             name: '竞赛网址',
-            content: ''
+            content: this.item.url
           },
           {
             name: '竞赛类别',
-            content: ''
+            content: this.item.category
           },
           {
             name: '参赛范围',
-            content: ''
+            content: this.item.scope
           },
           {
             name: '涉及学科',
-            content: ''
+            content: this.item.subjects
           },
           {
             name: '参赛形式',
-            content: ''
+            content: this.item.form
           },
           {
             name: '参赛规模',
-            content: ''
+            content: this.item.scale
           },
           {
             name: '竞赛起止时间',
-            content: ''
+            content: this.item.time
           },
           {
             name: '竞赛项目简介',
-            content: ''
+            content: this.item.desc
           },
           {
             name: '竞赛项目目标',
-            content: ''
+            content: this.item.target
           },
           {
             name: '经费预算（元）',
-            content: ''
+            content: this.item.budget
           },
           {
             name: '工作量预算（小时）',
-            content: ''
+            content: this.item.workload
           },
           {
             name: '竞赛项目方案',
@@ -123,79 +120,79 @@
         data2: [
           {
             name: '项目编号',
-            content: '201611688006'
+            content: this.item.code
           },
           {
             name: '项目名称',
-            content: '基于大数据的酒店宴会定制化服务的研究'
+            content: this.item.name
           },
           {
             name: '项目类型',
-            content: '校外项目'
+            content: this.item.type
           },
           {
             name: '项目负责人',
-            content: '熊勇'
+            content: this.item.admin
           },
           {
             name: '指导教师',
-            content: '曹静'
+            content: this.item.teacher
           },
           {
             name: '指导教师职称',
-            content: '讲师'
+            content: this.item.title
           },
           {
             name: '所属学院',
-            content: '计算机科学与技术'
+            content: this.item.college
           },
           {
             name: '负责人电话',
-            content: ''
+            content: this.item.phone
           },
           {
             name: '联合企业',
-            content: ''
+            content: this.item.coCmp
           },
           {
             name: '赛项基本情况',
-            content: ''
+            content: this.item.basic
           },
           {
             name: '赛项意义',
-            content: ''
+            content: this.item.meaning
           },
           {
             name: '赛项特色',
-            content: ''
+            content: this.item.characteristic
           },
           {
             name: '比赛方式',
-            content: ''
+            content: this.item.form
           },
           {
             name: '成绩评定方式',
-            content: ''
+            content: this.item.rate
           },
           {
             name: '企业合作意向',
-            content: ''
+            content: this.item.purpose
           },
           {
             name: '建议竞赛器材',
-            content: ''
+            content: this.item.tool
           },
           {
             name: '建议竞赛平台',
-            content: ''
+            content: this.item.platform
           },
           {
             name: '经费预算（元）',
-            content: ''
+            content: this.item.budget
           },
           {
             name: '筹备工作进度',
-            content: ''
+            content: this.item.plan
           },
           {
             name: '竞赛项目方案',

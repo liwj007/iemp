@@ -119,14 +119,14 @@
           },
           {
             title: '所属学院',
-            key: 'colleague'
+            key: 'college'
           },
           {
             title: '操作',
             key: 'action',
             align: 'center',
             render: (h, params) => {
-              if (params.row.file === 1) {
+              if (params.row.state === 1) {
                 return h('div', [
                   h('Button', {
                     props: {
@@ -182,26 +182,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            file: 1
-          },
-          {
-            code: '201611688007',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            file: 0
-          }
-        ]
+        data1: this.$store.state.doingProjectList
       }
     },
     methods: {

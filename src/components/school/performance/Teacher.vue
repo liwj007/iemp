@@ -78,45 +78,54 @@
         scale: [
           {
             value: '0',
-            label: '不限校内校外项目'
+            label: '2016'
           },
           {
             value: '1',
-            label: '校内项目'
+            label: '2015'
           },
           {
             value: '2',
-            label: '校外项目'
+            label: '2014'
           }
         ],
         model2: '0',
         columns1: [
           {
-            title: '项目编号',
-            key: 'code',
+            title: '编号',
+            type: 'index',
+            width: 80,
+            align: 'center'
+          },
+          {
+            title: '教师工号',
+            key: 'no',
             width: 150
           },
           {
-            title: '项目名称',
+            title: '教师姓名',
             key: 'name',
-            ellipsis: true,
             width: 400
           },
           {
-            title: '项目类型',
-            key: 'type'
-          },
-          {
-            title: '项目负责人',
-            key: 'admin'
-          },
-          {
-            title: '指导教师',
-            key: 'teacher'
-          },
-          {
             title: '所属学院',
-            key: 'colleague'
+            key: 'college'
+          },
+          {
+            title: '年份',
+            key: 'year'
+          },
+          {
+            title: '项目数',
+            key: 'proNum'
+          },
+          {
+            title: '项目获奖数',
+            key: 'awardNum'
+          },
+          {
+            title: '奖金',
+            key: 'money'
           },
           {
             title: '操作',
@@ -134,7 +143,7 @@
                   },
                   on: {
                     click: () => {
-                      this.$router.push('/school/performance/teacher_detail/' + params.row.code)
+                      this.$router.push('/school/performance/teacher_detail/' + params.row.no)
                     }
                   }
                 }, '查看详情')
@@ -142,24 +151,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机'
-          },
-          {
-            code: '201611688007',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机'
-          }
-        ]
+        data1: this.$store.state.teaAwardList
       }
     },
     methods: {

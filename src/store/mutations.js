@@ -14,6 +14,10 @@ const mutations = {
   REMOVE_CHECK_CP (state) {
     state.projectList.push(state.competitionList[0])
     state.competitionList.splice(0, 1)
+  },
+  PROJECT_CHECK_CP (state, item) {
+    state.toCheckProjectList.splice(0, 1)
+    state.checkedProjectList.push(item)
   }
 }
 

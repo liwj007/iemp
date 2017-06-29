@@ -12,10 +12,35 @@ const proProcessSum = r => require.ensure([], () => r(require('@/components/pro/
 const proEditSum = r => require.ensure([], () => r(require('@/components/pro/process/SummaryDetail')), 'pro')
 const proProcessCheck = r => require.ensure([], () => r(require('@/components/pro/process/Check')), 'pro')
 const proSumView = r => require.ensure([], () => r(require('@/components/pro/process/SummaryView')), 'pro')
+const perPro1 = r => require.ensure([], () => r(require('@/components/pro/performance/Product')), 'pro')
+const perPro2 = r => require.ensure([], () => r(require('@/components/pro/performance/Workload')), 'pro')
+const Register = r => require.ensure([], () => r(require('@/components/pro/performance/Register')), 'pro')
+const WorkloadRegister = r => require.ensure([], () => r(require('@/components/pro/performance/WorkloadRegister')), 'pro')
+
 export default {
   path: '/pro',
   component: proMain,
   children: [
+    {
+      path: 'performance',
+      name: 'proProduct',
+      component: perPro1
+    },
+    {
+      path: 'workload',
+      name: 'proWorkload',
+      component: perPro2
+    },
+    {
+      path: 'performance/register/:id',
+      name: 'perRegister',
+      component: Register
+    },
+    {
+      path: 'workload/register/:id',
+      name: 'workloadRegister',
+      component: WorkloadRegister
+    },
     {
       path: '',
       redirect: 'project/admin'
