@@ -58,11 +58,7 @@
               <Option v-for="item in years" :value="item.value" :key="item">{{ item.label }}</Option>
             </Select>
           </div>
-          <div>
-            <Select v-model="model2" style="width:200px">
-              <Option v-for="item in colleges" :value="item.value" :key="item">{{ item.label }}</Option>
-            </Select>
-          </div>
+          <CollegeSelection :college="model2"></CollegeSelection>
           <div>
             <Button type="info">筛选</Button>
           </div>
@@ -113,11 +109,13 @@
   </Workare>
 </template>
 <script>
+  import CollegeSelection from '../template/CollegeSelection'
   import Workare from '../../Workare'
   export default{
     name: 'Statistic',
     components: {
-      Workare
+      Workare,
+      CollegeSelection
     },
     data () {
       return {
@@ -128,13 +126,7 @@
           }
         ],
         model1: '0',
-        colleges: [
-          {
-            value: '0',
-            label: '计算机科学与技术学院'
-          }
-        ],
-        model2: '0',
+        model2: '全部申请学院',
         rank: [
           {
             name: 'ACM国际大学生程序设计竞赛',
