@@ -797,10 +797,16 @@ const state = {
 		desc: '大赛倡导科技创新创业服务社会、改善人类生活，引导和激励高校学生勇于创新，发现和培养一批有作为、有潜力的优秀青年创新创业人才，促进和加强以物联网、智能硬件等为代表的高科技领域的产学研结合，推动高科技产业的发展，为高科技创新创业搭建国际交流平台。',
 		target: '省级三等奖以上',
 		budget: 2000000,
-      	workload: 1440,
-      	file: '',
-   	}
+    workload: 1440,
+    file: '',
+    college: '通过',
+    collegeOpinion: '通过',
+    professor: '通过',
+    professorOpinion: '通过',
+    school: '',
+    schoolOpinion: ''
    } 
+ }
 }
 
 export default state

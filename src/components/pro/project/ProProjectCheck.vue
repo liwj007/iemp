@@ -61,6 +61,8 @@
     },
     data () {
       return {
+        item: this.$store.state.projectDetail[this.$route.params.id],
+        /*
         item: {
           college: '11',
           collegeOpinion: '11',
@@ -69,10 +71,12 @@
           school: '11',
           schoolOpinion: '11'
         },
+        */
         result: '通过',
         opinion: ''
       }
     },
+    /*
     mounted () {
       if (this.$route.params.id === '201611688006') {
         this.item = {
@@ -92,6 +96,7 @@
         }
       }
     },
+    */
     methods: {
       selectMenu: function (name) {
         switch (name) {
