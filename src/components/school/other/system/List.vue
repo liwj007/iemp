@@ -65,19 +65,19 @@
                     }
                   }
                 }, '查看专业'),
-                h('Button', {
-                  props: {
-                    type: 'text',
-                    size: 'small'
-                  },
-                  style: {
-                    marginRight: '5px'
-                  },
-                  on: {
-                    click: () => {
-                    }
-                  }
-                }, '编辑'),
+//                h('Button', {
+//                  props: {
+//                    type: 'text',
+//                    size: 'small'
+//                  },
+//                  style: {
+//                    marginRight: '5px'
+//                  },
+//                  on: {
+//                    click: () => {
+//                    }
+//                  }
+//                }, '编辑'),
                 h('Button', {
                   props: {
                     type: 'text',

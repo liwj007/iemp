@@ -13,6 +13,9 @@
 </style>
 <template>
   <div class="login">
+    <div style="text-align: center;    padding-top: 28px;">
+      <img src="/static/login-logo.png"/>
+    </div>
     <Form ref="formCustom" :model="formCustom" :rules="ruleCustom" :label-width="80">
 
       <Form-item label="用户名" prop="username">
