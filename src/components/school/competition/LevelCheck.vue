@@ -29,6 +29,11 @@
 
       <div class="clear" style="padding-top: 20px;">
         <Table :columns="columns1" :data="data1"></Table>
+        <div style="margin: 10px;overflow: hidden">
+          <div style="float: right;">
+            <Page :total="this.$store.state.competitionList.length" :current="1" @on-change="changePage"></Page>
+          </div>
+        </div>
       </div>
 
 
@@ -116,10 +121,17 @@
             }
           }
         ],
-        data1: this.$store.state.competitionList
+        data1: this.getCollegeData()
       }
     },
     methods: {
+      getCollegeData (index) {
+        index = index === undefined ? 1 : index
+        return this.$store.state.competitionList.slice((index - 1) * 10, index * 10)
+      },
+      changePage (index) {
+        this.data1 = this.getCollegeData(index)
+      }
     }
   }
 </script>

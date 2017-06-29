@@ -1,6 +1,6 @@
 <template>
   <div class="top" style="font-size: 18px">
-    <span><Icon type="person"></Icon> {{user.username}}</span>
+    <span><Icon type="person"></Icon> {{user.username}}({{user.usertype === 'school'? '学校管理员':'项目负责人'}})</span>
     <span @click="logout"><svg class="icon" aria-hidden="true"><use xlink:href="#icon-guanbi"></use></svg></span>
   </div>
 </template>

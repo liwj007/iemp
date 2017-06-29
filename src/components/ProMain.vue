@@ -24,15 +24,15 @@
           {
             type: '项目管理',
             list: [
-              {link: '/' + this.$store.state.user.usertype + '/project', name: '项目申报', icon: '#icon-zhiyesuzhi'},
-              {link: '/' + this.$store.state.user.usertype + '/process', name: '流程管理', icon: '#icon-zhiyesuzhi'}
+              {link: '/pro/project', name: '项目申报', icon: '#icon-zhiyesuzhi'},
+              {link: '/pro/process', name: '流程管理', icon: '#icon-zhiyesuzhi'}
             ]
           },
           {
             type: '奖励和工作量',
             list: [
-              {link: '/' + this.$store.state.user.usertype + '/performance', name: '奖励认定', icon: '#icon-zhiyesuzhi'},
-              {link: '/' + this.$store.state.user.usertype + '/workload', name: '工作量认定', icon: '#icon-zhiyesuzhi'}
+              {link: '/pro/performance', name: '奖励认定', icon: '#icon-zhiyesuzhi'},
+              {link: '/pro/workload', name: '工作量认定', icon: '#icon-zhiyesuzhi'}
             ]
           }
         ]

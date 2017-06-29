@@ -32,6 +32,11 @@
         </div>
         <div class="result clear">
           <Table :columns="columns1" :data="data1"></Table>
+          <div style="margin: 10px;overflow: hidden">
+            <div style="float: right;">
+              <Page :total="this.$store.state.doingProjectList.length" :current="1" @on-change="changePage"></Page>
+            </div>
+          </div>
         </div>
 
 
@@ -154,7 +159,7 @@
             }
           }
         ],
-        data1: this.$store.state.doingProjectList
+        data1: this.getCollegeData()
       }
     },
     methods: {
@@ -167,6 +172,13 @@
             this.$router.push('/school/process/summary')
             break
         }
+      },
+      getCollegeData (index) {
+        index = index === undefined ? 1 : index
+        return this.$store.state.doingProjectList.slice((index - 1) * 10, index * 10)
+      },
+      changePage (index) {
+        this.data1 = this.getCollegeData(index)
       }
     }
   }

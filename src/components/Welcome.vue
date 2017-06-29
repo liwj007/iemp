@@ -21,12 +21,12 @@
       <Form-item label="密码" prop="passwd">
         <Input type="password" v-model="formCustom.passwd"></Input>
       </Form-item>
-      <Form-item label="角色" prop="usertype">
-        <Radio-group v-model="formCustom.usertype">
-          <Radio label="school">学校管理员</Radio>
-          <Radio label="pro">项目负责人</Radio>
-        </Radio-group>
-      </Form-item>
+      <!--<Form-item label="角色" prop="usertype">-->
+        <!--<Radio-group v-model="formCustom.usertype">-->
+          <!--<Radio label="school">学校管理员</Radio>-->
+          <!--<Radio label="pro">项目负责人</Radio>-->
+        <!--</Radio-group>-->
+      <!--</Form-item>-->
       <Form-item>
         <Button type="primary" @click="handleSubmit('formCustom')">登录</Button>
         <Button type="ghost" @click="handleReset('formCustom')" style="margin-left: 8px">取消</Button>
@@ -73,14 +73,39 @@
       handleSubmit (name) {
         this.$refs[name].validate((valid) => {
           if (valid) {
-            this.USER_SIGNIN(this.formCustom)
-            if (this.formCustom.usertype === 'school') {
-              this.$router.push('/school')
-            } else if (this.formCustom.usertype === 'pro') {
-              this.$router.push('/pro')
+            let rights = this.$store.state.rights
+            let f = true
+            let t = -1
+            for (var x in rights) {
+              var tmp = rights[x]
+              if (this.formCustom.username === tmp.no) {
+                f = true
+                if (tmp.rights.indexOf(4) !== -1) {
+                  t = 1
+                } else if (tmp.rights.indexOf(16) !== -1) {
+                  t = 2
+                } else {
+                  t = -1
+                }
+                break
+              }
+              f = false
             }
-          } else {
-            this.$Message.error('表单验证失败!')
+            if (f) {
+              if (t === 2) {
+                this.formCustom.usertype = 'school'
+                this.USER_SIGNIN(this.formCustom)
+                this.$router.push('/school')
+              } else if (t === 1) {
+                this.formCustom.usertype = 'pro'
+                this.USER_SIGNIN(this.formCustom)
+                this.$router.push('/pro')
+              } else {
+                this.$Message.error('登录失败!')
+              }
+            } else {
+              this.$Message.error('登录失败!')
+            }
           }
         })
       },
