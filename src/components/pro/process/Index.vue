@@ -185,8 +185,8 @@
   .ivu-modal-content{
     top:60px
   }
-  .ivu-modal-body input{
-    top:15px;
-  }
+  /*.ivu-modal-body input{*/
+    /*top:15px;*/
+  /*}*/
 
 </style>

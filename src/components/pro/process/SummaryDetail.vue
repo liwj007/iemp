@@ -19,7 +19,7 @@
       <div class="wrapper-content">
         <Table border :columns="columns" :data="data1" disabled-hover :show-header="showHeader"></Table>
       </div>
-      <div style = "display: bolck; width: 100%; height: 50px; overflow: hidden; padding-left:40%">        
+      <div style = "display: bolck; width: 100%; height: 50px; overflow: hidden; padding-left:40%">
         <div class = "floating">
           <Button type="default">取消</Button>
         </div>
@@ -28,7 +28,7 @@
         </div>
         <div class = "floating">
           <Button type="primary">提交</Button>
-        </div>       
+        </div>
       </div>
     </section>
   </Workare>
@@ -67,14 +67,11 @@
         data1: [
           {
             name: '项目编号',
-            content: '201611688006',
-            cellClassName: {
-              name: 'demo-table-info-cell-age'
-            }
+            content: '201606274198'
           },
           {
             name: '项目名称',
-            content: '基于大数据的酒店宴会定制化服务的研究'
+            content: '中国大学生计算机设计大赛'
           },
           {
             name: '项目类型',
@@ -82,7 +79,7 @@
           },
           {
             name: '项目负责人',
-            content: '熊勇'
+            content: '曹阳'
           },
           {
             name: '指导教师',
@@ -94,7 +91,7 @@
           },
           {
             name: '所属学院',
-            content: '计算机科学与技术'
+            content: '计算机科学与技术学院'
           },
           {
             name: '参赛人数',
@@ -140,11 +137,6 @@
         this.item = {
           college: '通过',
           collegeOpinion: '本工程主要内容包括扩宽河道主槽，修建河道两侧堤防、调整河道比降，布置泄洪建筑物与穿堤建筑物。本项目的实施，是提高市防洪标准的需要，是振兴市域经济的需要，是建设滨水城市的需要，有利于城市合理规划，促进城市开发建设。该项目建成后将会为市安邦河沿岸提供良好的建设条件，使市经济社会健康、和谐、持续发展。'
-        }
-      } else {
-        this.item = {
-          college: '22',
-          collegeOpinion: '22'
         }
       }
     },

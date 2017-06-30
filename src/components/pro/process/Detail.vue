@@ -219,7 +219,7 @@
                 alert('无法查到添加的老师')
                 return
               }
-              res = this.$store.state.teachersForSearch[tmp.value] + ','
+              res = this.$store.state.teachersForSearch[tmp.value].name + ','
             }
             this.$store.commit('ADD_PRO_TEACHE', res)
           } else {

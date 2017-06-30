@@ -1,4 +1,7 @@
 const state = {
+  toCheckProjectList2: [
+    {'code': '201606240024', 'name': 'ACM国际大学生程序设计竞赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '梁静婧', 'college': '计算机科学与技术学院'}
+  ],
   awardProjects: [
     {'code': '201609118762', 'name': '中国大学生“互联网+”应用创新大赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '陈飞', 'college': '计算机科学与技术学院', 'state': 1}
   ],

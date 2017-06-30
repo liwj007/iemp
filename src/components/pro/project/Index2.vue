@@ -18,7 +18,7 @@
     <section slot="footer">
         <div  class="filter">
           <div class="title">项目立项列表</div>
-          <!--           
+          <!--
           <div>
             <Select v-model="model1" style="width:200px">
               <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
@@ -28,7 +28,7 @@
             <Select v-model="model2" style="width:200px">
               <Option v-for="item in scale" :value="item.value" :key="item">{{ item.label }}</Option>
             </Select>
-          </div> 
+          </div>
           <div>
             <Button type="info">筛选</Button>
           </div>
@@ -52,7 +52,7 @@
     },
     data () {
       return {
-        
+
         collegeList: [
           {
             value: '0',
@@ -121,7 +121,7 @@
           },
           {
             title: '所属学院',
-            key: 'colleague'
+            key: 'college'
           },
           {
             title: '操作',
@@ -148,7 +148,7 @@
             }
           }
         ],
-        data1: this.$store.state.toCheckProjectList
+        data1: this.$store.state.toCheckProjectList2
       }
     },
     methods: {
