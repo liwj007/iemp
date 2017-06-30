@@ -55,24 +55,36 @@
     </section>
     <section slot="footer">
       <div class="wrapper-content">
-        <DetailTemplate :item = 'item'></DetailTemplate>
+        <ProProjectDetailTemplate :type = "item.type":item="item"></ProProjectDetailTemplate>
       </div>
     </section>
   </Workare>
 </template>
 <script>
   import Workare from '../../Workare'
-  import DetailTemplate from './DetailTemplate'
+  import ProProjectDetailTemplate from './ProProjectDetailTemplate'
   export default{
-    name: 'proDetail',
+    name: 'proProjectDetail',
     components: {
-      DetailTemplate,
+      ProProjectDetailTemplate,
       Workare
     },
     data () {
       return {
         showHeader: false,
-        item: this.$store.state.proProjectDetail[this.$route.params.id]
+        item: this.$store.state.projectDetail[this.$route.params.id]
+      }
+    },
+    methods: {
+      selectMenu: function (name) {
+        switch (name) {
+          case '1':
+            this.$router.push('/pro/project/proCheck/' + this.$route.params.id)
+            break
+          case '2':
+            this.$router.push('/pro/project/his_detail/' + this.$route.params.id)
+            break
+        }
       }
     }
 }

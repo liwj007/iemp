@@ -3,7 +3,7 @@
     <section slot="header">
       <Menu mode="horizontal" active-name="1" @on-select="selectMenu">
         <li class=" back">
-          <router-link to="/pro/project/admin">
+          <router-link to="/pro/project/his">
             <Icon type="chevron-left" size="32px"></Icon>
           </router-link>
 
@@ -61,7 +61,7 @@
     },
     data () {
       return {
-        item: this.$store.state.proProjectDetail[this.$route.params.id],
+        item: this.$store.state.projectDetail[this.$route.params.id],
         /*
         item: {
           college: '11',
@@ -101,10 +101,10 @@
       selectMenu: function (name) {
         switch (name) {
           case '1':
-            this.$router.push('/pro/project/check/' + this.$route.params.id)
+            this.$router.push('/pro/project/procheck/' + this.$route.params.id)
             break
           case '2':
-            this.$router.push('/pro/project/detail/' + this.$route.params.id)
+            this.$router.push('/pro/project/his_detail/' + this.$route.params.id)
             break
         }
       }

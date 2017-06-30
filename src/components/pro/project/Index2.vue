@@ -52,6 +52,7 @@
     },
     data () {
       return {
+        
         collegeList: [
           {
             value: '0',
@@ -139,7 +140,7 @@
                   },
                   on: {
                     click: () => {
-                      alert(params.row.code)
+                      this.$router.push('/pro/project/his_detail/' + params.row.code)
                     }
                   }
                 }, '查看')
@@ -147,24 +148,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机'
-          },
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机'
-          }
-        ]
+        data1: this.$store.state.toCheckProjectList
       }
     },
     methods: {

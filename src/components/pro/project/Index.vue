@@ -138,7 +138,8 @@ export default{
           }
         }
       ],
-      data1: this.$store.state.applyList
+      data1: this.$store.state.proProjectList 
+
     }
   },
   methods: {

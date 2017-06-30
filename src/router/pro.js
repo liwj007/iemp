@@ -16,7 +16,8 @@ const perPro1 = r => require.ensure([], () => r(require('@/components/pro/perfor
 const perPro2 = r => require.ensure([], () => r(require('@/components/pro/performance/Workload')), 'pro')
 const Register = r => require.ensure([], () => r(require('@/components/pro/performance/Register')), 'pro')
 const WorkloadRegister = r => require.ensure([], () => r(require('@/components/pro/performance/WorkloadRegister')), 'pro')
-
+const proHisDetail = r => require.ensure([], () => r(require('@/components/pro/project/ProProjectDetail')), 'pro')
+const proProjectCheck = r => require.ensure([], () => r(require('@/components/pro/project/ProProjectCheck')), 'pro')
 export default {
   path: '/pro',
   component: proMain,
@@ -60,9 +61,19 @@ export default {
       component: Pro2
     },
     {
+      path: 'project/his_detail/:id',
+      name: 'proHisDetail',
+      component: proHisDetail
+    },
+    {
       path: 'project/check/:id',
       name: 'proCheck',
       component: proCheck
+    },
+    {
+      path: 'project/procheck/:id',
+      name: 'proProjectCheck',
+      component: proProjectCheck
     },
     {
       path: 'project/detail/:id',
