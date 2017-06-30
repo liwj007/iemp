@@ -24,8 +24,8 @@
     </section>
     <section slot="footer">
         <div  class="filter">
-          <div class="title">项目立项列表</div>     
-        </div>     
+          <div class="title">项目立项列表</div>
+        </div>
         <div class="result clear">
           <Table :columns="columns1" :data="data1"></Table>
         </div>
@@ -42,48 +42,6 @@
     },
     data () {
       return {
-        collegeList: [
-          {
-            value: '0',
-            label: '全部申请学院'
-          },
-          {
-            value: '1',
-            label: '计算机'
-          },
-          {
-            value: '2',
-            label: '机电'
-          },
-          {
-            value: '3',
-            label: '通信'
-          },
-          {
-            value: '4',
-            label: '机械'
-          },
-          {
-            value: '5',
-            label: '经贸'
-          }
-        ],
-        model1: '0',
-        scale: [
-          {
-            value: '0',
-            label: '不限校内校外项目'
-          },
-          {
-            value: '1',
-            label: '校内项目'
-          },
-          {
-            value: '2',
-            label: '校外项目'
-          }
-        ],
-        model2: '0',
         columns1: [
           {
             title: '项目编号',
@@ -110,7 +68,7 @@
           },
           {
             title: '所属学院',
-            key: 'colleague'
+            key: 'college'
           },
           {
             title: '操作',
@@ -134,8 +92,7 @@
                     }
                   }, '编辑')
                 ])
-              }
-              else if (params.row.state === 2){
+              } else if (params.row.state === 2) {
                 return h('div', [
                   h('span', {
                     attrs: {
@@ -143,77 +100,47 @@
                     }
                   }, '未通过'),
                   h('a', {
-	                props: {
-	                  type: 'primary',
-	                  size: 'small'
-	                },
-	                  style: {
-	                    marginRight: '5px'
-	                  },
-	                  on: {
-	                    click: () => {
-	                    this.$router.push('/pro/process/editsum/' + params.row.code)
-	                    }
-	                  }
-	                }, '编辑')
+                    props: {
+                      type: 'primary',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px'
+                    },
+                    on: {
+                      click: () => {
+                      this.$router.push('/pro/process/editsum/' + params.row.code)
+                      }
+                    }
+                  }, '编辑')
                 ])
-              }
-              else {
-				return h('div', [
+              } else {
+                return h('div', [
                   h('span', {
                     attrs: {
                       class: 'unfile'
                     }
                   }, '已通过'),
-                
-	              h('a', {
-	                props: {
-	                  type: 'primary',
-	                  size: 'small'
-	                },
-	                  style: {
-	                    marginRight: '5px'
-	                  },
-	                  on: {
-	                    click: () => {
-	                    this.$router.push('/pro/process/check/' + params.row.code)
-	                    }
-	                  }
-	                }, '查看')
-	            ])
+                  h('a', {
+                    props: {
+                      type: 'primary',
+                      size: 'small'
+                    },
+                    style: {
+                      marginRight: '5px'
+                    },
+                    on: {
+                      click: () => {
+                        this.$router.push('/pro/process/check/' + params.row.code)
+                      }
+                    }
+                  }, '查看')
+                ])
               }
             }
           }
         ],
-        data1: [
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            state: 1
-          },
-          {
-            code: '201611688007',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            state: 2
-          },
-          {
-            code: '201611688008',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机',
-            state: 3
-          },
-        ]
+        data1: this.$store.state.summaryProjects
       }
     },
     methods: {

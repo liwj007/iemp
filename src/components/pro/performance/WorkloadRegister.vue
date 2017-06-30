@@ -77,7 +77,6 @@
             render: (h, params) => {
               return h('Input', {
                 props: {
-                  placeholder: '输入参赛队伍编号'
                 },
                 on: {
                   focus: (index) => {
@@ -101,7 +100,6 @@
             render: (h, params) => {
               return h('Input', {
                 props: {
-                  placeholder: '输入获得奖项'
                 }
               })
             }

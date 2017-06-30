@@ -3,11 +3,11 @@
   <component name="ChangeListManager">
     <list default="true" id="0119e2de-9b55-46f6-9fcc-1e74bdbd7a9e" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/process/Detail.vue" afterPath="$PROJECT_DIR$/src/components/pro/process/Detail.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/process/Form.vue" afterPath="$PROJECT_DIR$/src/components/pro/process/Form.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/process/Index.vue" afterPath="$PROJECT_DIR$/src/components/pro/process/Index.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/project/Apply.vue" afterPath="$PROJECT_DIR$/src/components/pro/project/Apply.vue" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/mutations.js" afterPath="$PROJECT_DIR$/src/store/mutations.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/performance/Product.vue" afterPath="$PROJECT_DIR$/src/components/pro/performance/Product.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/performance/Workload.vue" afterPath="$PROJECT_DIR$/src/components/pro/performance/Workload.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/performance/WorkloadRegister.vue" afterPath="$PROJECT_DIR$/src/components/pro/performance/WorkloadRegister.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/process/Course.vue" afterPath="$PROJECT_DIR$/src/components/pro/process/Course.vue" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/components/pro/process/Summary.vue" afterPath="$PROJECT_DIR$/src/components/pro/process/Summary.vue" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/store/state.js" afterPath="$PROJECT_DIR$/src/store/state.js" />
     </list>
     <ignored path="$PROJECT_DIR$/.tmp/" />
@@ -26,14 +26,44 @@
       <file leaf-file-name="state.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/store/state.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="322">
-              <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="18" />
+            <state relative-caret-position="23">
+              <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="15" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Detail.vue" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Workload.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pro/performance/Workload.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="345">
+              <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="WorkloadRegister.vue" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/components/pro/performance/WorkloadRegister.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="414">
+              <caret line="78" column="24" lean-forward="false" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Register.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pro/performance/Register.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="0">
+              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Detail.vue" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/components/pro/process/Detail.vue">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="562">
@@ -41,6 +71,36 @@
               <folding>
                 <element signature="e#1711#1746#0" expanded="true" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Course.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pro/process/Course.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-207">
+              <caret line="87" column="24" lean-forward="false" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Summary.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pro/process/Summary.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="575">
+              <caret line="70" column="24" lean-forward="false" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Product.vue" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/components/pro/performance/Product.vue">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="207">
+              <caret line="129" column="46" lean-forward="true" selection-start-line="129" selection-start-column="15" selection-end-line="129" selection-end-column="46" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -67,7 +127,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>项目总结方案提交</find>
       <find>项目立项申请</find>
       <find>项目总结方案审核</find>
       <find>奖励标准</find>
@@ -94,12 +153,12 @@
       <find>ACM国际大学生程序设计竞赛</find>
       <find>全国新闻出版行业</find>
       <find>worloadList</find>
-      <find>&quot;</find>
       <find>file</find>
       <find>teacher</find>
+      <find>summaryProjects</find>
+      <find>&quot;</find>
     </findStrings>
     <replaceStrings>
-      <replace>': '</replace>
       <replace>, phone</replace>
       <replace>awardNum</replace>
       <replace>1</replace>
@@ -117,6 +176,7 @@
       <replace>4</replace>
       <replace>,</replace>
       <replace>college</replace>
+      <replace>': '</replace>
       <replace>'</replace>
     </replaceStrings>
   </component>
@@ -126,11 +186,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/src/router/pro2.js" />
-        <option value="$PROJECT_DIR$/src/router/index.js" />
-        <option value="$PROJECT_DIR$/src/router/pro.js" />
-        <option value="$PROJECT_DIR$/src/components/school/project/Detail.vue" />
-        <option value="$PROJECT_DIR$/src/components/school/project/DetailView.vue" />
         <option value="$PROJECT_DIR$/src/components/school/project/CheckView.vue" />
         <option value="$PROJECT_DIR$/src/components/school/project/Check.vue" />
         <option value="$PROJECT_DIR$/src/components/school/process/Detail.vue" />
@@ -174,9 +229,14 @@
         <option value="$PROJECT_DIR$/src/components/pro/project/Apply.vue" />
         <option value="$PROJECT_DIR$/src/components/pro/process/Index.vue" />
         <option value="$PROJECT_DIR$/src/components/pro/process/Form.vue" />
-        <option value="$PROJECT_DIR$/src/store/state.js" />
         <option value="$PROJECT_DIR$/src/store/mutations.js" />
         <option value="$PROJECT_DIR$/src/components/pro/process/Detail.vue" />
+        <option value="$PROJECT_DIR$/src/components/pro/process/Course.vue" />
+        <option value="$PROJECT_DIR$/src/components/pro/process/Summary.vue" />
+        <option value="$PROJECT_DIR$/src/components/pro/performance/Product.vue" />
+        <option value="$PROJECT_DIR$/src/store/state.js" />
+        <option value="$PROJECT_DIR$/src/components/pro/performance/Workload.vue" />
+        <option value="$PROJECT_DIR$/src/components/pro/performance/WorkloadRegister.vue" />
       </list>
     </option>
   </component>
@@ -478,6 +538,32 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="components" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="pro" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="performance" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iemp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="iemp" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="src" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
@@ -608,7 +694,7 @@
       <workItem from="1498578483873" duration="17909000" />
       <workItem from="1498650672475" duration="22725000" />
       <workItem from="1498697252405" duration="5601000" />
-      <workItem from="1498725353031" duration="28661000" />
+      <workItem from="1498725353031" duration="29838000" />
     </task>
     <task id="LOCAL-00001" summary="t1">
       <created>1498035196863</created>
@@ -820,11 +906,18 @@
       <option name="project" value="LOCAL" />
       <updated>1498753281399</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="参赛学生">
+      <created>1498781427421</created>
+      <option name="number" value="00031" />
+      <option name="presentableId" value="LOCAL-00031" />
+      <option name="project" value="LOCAL" />
+      <updated>1498781427421</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="136210000" />
+    <option name="totallyTimeSpent" value="137387000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
@@ -895,7 +988,8 @@
     <MESSAGE value="融合数据" />
     <MESSAGE value="学院的下拉框" />
     <MESSAGE value="文件下载" />
-    <option name="LAST_COMMIT_MESSAGE" value="文件下载" />
+    <MESSAGE value="参赛学生" />
+    <option name="LAST_COMMIT_MESSAGE" value="参赛学生" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -904,56 +998,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/components/school/performance/Check.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="437">
-          <caret line="32" column="54" lean-forward="true" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/school/other/system/Student.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="368">
-          <caret line="46" column="6" lean-forward="true" selection-start-line="44" selection-start-column="3" selection-end-line="46" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/school/competition/Index.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-414">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/school/template/CollegeSelection.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="23" lean-forward="false" selection-start-line="10" selection-start-column="23" selection-end-line="10" selection-end-column="23" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/school/other/system/Teacher.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="230">
-          <caret line="10" column="61" lean-forward="true" selection-start-line="10" selection-start-column="6" selection-end-line="10" selection-end-column="61" />
-          <folding>
-            <element signature="n#style#0;n#div#0;n#div#0;n#div#1;n#div#0;n#template#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/components/school/competition/Check.vue">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1127">
-          <caret line="49" column="33" lean-forward="false" selection-start-line="49" selection-start-column="33" selection-end-line="49" selection-end-column="33" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/components/school/process/Detail.vue">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="759">
@@ -1351,10 +1395,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/store/state.js">
+    <entry file="file://$PROJECT_DIR$/src/components/pro/process/Summary.vue">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="322">
-          <caret line="20" column="18" lean-forward="false" selection-start-line="20" selection-start-column="4" selection-end-line="20" selection-end-column="18" />
+        <state relative-caret-position="575">
+          <caret line="70" column="24" lean-forward="false" selection-start-line="70" selection-start-column="24" selection-end-line="70" selection-end-column="24" />
           <folding />
         </state>
       </provider>
@@ -1366,6 +1410,54 @@
           <folding>
             <element signature="e#1711#1746#0" expanded="true" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pro/process/Course.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-207">
+          <caret line="87" column="24" lean-forward="false" selection-start-line="87" selection-start-column="24" selection-end-line="87" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/store/state.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="23">
+          <caret line="1" column="15" lean-forward="false" selection-start-line="1" selection-start-column="2" selection-end-line="1" selection-end-column="15" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pro/performance/Product.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="207">
+          <caret line="129" column="46" lean-forward="true" selection-start-line="129" selection-start-column="15" selection-end-line="129" selection-end-column="46" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pro/performance/Workload.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="57" column="24" lean-forward="false" selection-start-line="57" selection-start-column="24" selection-end-line="57" selection-end-column="24" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pro/performance/Register.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/components/pro/performance/WorkloadRegister.vue">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="414">
+          <caret line="78" column="24" lean-forward="false" selection-start-line="78" selection-start-column="24" selection-end-line="78" selection-end-column="24" />
+          <folding />
         </state>
       </provider>
     </entry>

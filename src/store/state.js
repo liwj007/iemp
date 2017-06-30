@@ -1,4 +1,13 @@
 const state = {
+  awardProjects: [
+    {'code': '201609118762', 'name': '中国大学生“互联网+”应用创新大赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '陈飞', 'college': '计算机科学与技术学院', 'state': 1}
+  ],
+  summaryProjects: [
+    {'code': '201606274198', 'name': '中国大学生计算机设计大赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '段鸣生', 'college': '计算机科学与技术学院', state: 1}
+  ],
+  adminProjects: [
+    {'code': '201606240024', 'name': 'ACM国际大学生程序设计竞赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '梁静婧', 'college': '计算机科学与技术学院'}
+  ],
   teachersForSearch: {
     '201513063': {'id': '1', 'no': '201513063', 'name': '林雪丽', 'college': '工商管理学院', 'title': '讲师', 'duty': '专任教师', 'phone': '13000166065', 'awardNum': '0'},
     '201516509': {'id': '2', 'no': '201516509', 'name': '刘永策', 'college': '工商管理学院', 'title': '副教授', 'duty': '专任教师', 'phone': '13105207085', 'awardNum': '2'},
@@ -802,45 +811,41 @@ const state = {
       phone: '13105203486'
     }
   ],
-  proProjectList:  [
-  	{"code":"201705040069","name":"“ORACLE OAEC”杯校园软件与网页设计大赛","type":"校外项目","admin":"曹阳","teacher":"熊杰希","college":"计算机科学与技术学院"},
-
-
-
-
+  proProjectList: [
+    {'code': '201705040069', 'name': '“ORACLE OAEC”杯校园软件与网页设计大赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '熊杰希', 'college': '计算机科学与技术学院'}
   ],
   proProjectDetail: {
-  	201705040069: {
-		code: '201705040069', 
-		name: '“ORACLE OAEC”杯校园软件与网页设计大赛', 
-		type: '校外项目', 
-		admin: '曹阳', 
-		teacher: '熊杰希', 
-		title: '讲师',
-		college: '计算机科学与技术学院',
-		applyYear: 2017,
-		hostCmp: '教育部创新方法教学指导分委员会',
-		coCmp: '',
-		url: 'http://www.oracleoaec.com',
-		category: '创新物联网',
-		scope: '国际',
-		subjects: '信息与电子工程',
-		form: '团队',
-		scale: '',
-		time: '2017-02-01~2017-06',
-		desc: '大赛倡导科技创新创业服务社会、改善人类生活，引导和激励高校学生勇于创新，发现和培养一批有作为、有潜力的优秀青年创新创业人才，促进和加强以物联网、智能硬件等为代表的高科技领域的产学研结合，推动高科技产业的发展，为高科技创新创业搭建国际交流平台。',
-		target: '省级三等奖以上',
-		budget: 2000000,
-    workload: 1440,
-    file: '',
-    college: '通过',
-    collegeOpinion: '通过',
-    professor: '通过',
-    professorOpinion: '通过',
-    school: '',
-    schoolOpinion: ''
-   } 
- }
+    201705040069: {
+      code: '201705040069',
+      name: '“ORACLE OAEC”杯校园软件与网页设计大赛',
+      type: '校外项目',
+      admin: '曹阳',
+      teacher: '熊杰希',
+      title: '讲师',
+      college: '计算机科学与技术学院',
+      applyYear: 2017,
+      hostCmp: '教育部创新方法教学指导分委员会',
+      coCmp: '',
+      url: 'http://www.oracleoaec.com',
+      category: '创新物联网',
+      scope: '国际',
+      subjects: '信息与电子工程',
+      form: '团队',
+      scale: '',
+      time: '2017-02-01~2017-06',
+      desc: '大赛倡导科技创新创业服务社会、改善人类生活，引导和激励高校学生勇于创新，发现和培养一批有作为、有潜力的优秀青年创新创业人才，促进和加强以物联网、智能硬件等为代表的高科技领域的产学研结合，推动高科技产业的发展，为高科技创新创业搭建国际交流平台。',
+      target: '省级三等奖以上',
+      budget: 2000000,
+      workload: 1440,
+      file: '',
+      college: '通过',
+      collegeOpinion: '通过',
+      professor: '通过',
+      professorOpinion: '通过',
+      school: '',
+      schoolOpinion: ''
+    }
+  }
 }
 
 export default state

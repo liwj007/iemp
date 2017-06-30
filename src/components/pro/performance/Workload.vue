@@ -55,7 +55,7 @@
           },
           {
             title: '所属学院',
-            key: 'colleague'
+            key: 'college'
           },
           {
             title: '操作',
@@ -128,35 +128,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '201604010128',
-            name: '全国大学生数字媒体作品竞赛',
-            type: '校外项目',
-            admin: '刘云霄',
-            teacher: '欧陆',
-            colleague: '人文与传播学院',
-            state: 1
-          },
-          {
-            code: '201603129874',
-            name: '烟台市大学生创新创业大赛',
-            type: '校外项目',
-            admin: '钱允新',
-            teacher: '李文军',
-            colleague: '中科创业学院',
-            state: 2
-          },
-          {
-            code: '201602118467',
-            name: '山东省财税技能大赛',
-            type: '校外项目',
-            admin: '万春华',
-            teacher: '张列',
-            colleague: '统计学院',
-            state: 3
-          }
-        ]
+        data1: this.$store.state.awardProjects
       }
     },
     methods: {

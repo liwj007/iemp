@@ -25,7 +25,7 @@
     <section slot="footer">
         <div  class="filter">
           <div class="title">项目立项列表</div>
-          <!--           
+          <!--
           <div>
             <Select v-model="model1" style="width:200px">
               <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
@@ -35,7 +35,7 @@
             <Select v-model="model2" style="width:200px">
               <Option v-for="item in scale" :value="item.value" :key="item">{{ item.label }}</Option>
             </Select>
-          </div> 
+          </div>
           <div>
             <Button type="info">筛选</Button>
           </div>
@@ -59,48 +59,6 @@
     },
     data () {
       return {
-        collegeList: [
-          {
-            value: '0',
-            label: '全部申请学院'
-          },
-          {
-            value: '1',
-            label: '计算机'
-          },
-          {
-            value: '2',
-            label: '机电'
-          },
-          {
-            value: '3',
-            label: '通信'
-          },
-          {
-            value: '4',
-            label: '机械'
-          },
-          {
-            value: '5',
-            label: '经贸'
-          }
-        ],
-        model1: '0',
-        scale: [
-          {
-            value: '0',
-            label: '不限校内校外项目'
-          },
-          {
-            value: '1',
-            label: '校内项目'
-          },
-          {
-            value: '2',
-            label: '校外项目'
-          }
-        ],
-        model2: '0',
         columns1: [
           {
             title: '项目编号',
@@ -127,7 +85,7 @@
           },
           {
             title: '所属学院',
-            key: 'colleague'
+            key: 'college'
           },
           {
             title: '项目实施方案',
@@ -154,24 +112,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机'
-          },
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            teacher: '李雨欣',
-            colleague: '计算机'
-          }
-        ]
+        data1: this.$store.state.adminProjects
       }
     },
     methods: {
