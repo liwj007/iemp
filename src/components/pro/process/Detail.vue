@@ -20,7 +20,7 @@
         </div>
 
       <Modal
-        title="对话框标题"
+        title="分配导师"
         v-model="modal8"
         :mask-closable="false" @on-cancel="onCancel" @on-ok="handleSubmit">
         <Form ref="formDynamic" :model="formDynamic" :label-width="80">
@@ -48,6 +48,8 @@
           </Form-item>
         </Form>
       </Modal>
+
+
     </section>
   </Workare>
 </template>
@@ -137,9 +139,9 @@
                     on: {
                       click: () => {
                         const title = '修改队伍'
-                        const content = ''
                         this.$Modal.confirm({
                           title: title,
+                          width: '900px',
                           render: (h) => {
                             return h(AlertFrom2)
                           }

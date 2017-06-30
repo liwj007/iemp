@@ -7,19 +7,19 @@
             :prop="'items.' + index + '.value1'"
             :rules="{required: true, message: '成员' + (index + 1) +'不能为空', trigger: 'blur'}">
             <Row>
-                <Col span="6">
+                <Col span="5">
                     <Input type="text" v-model="item.value1" placeholder="学生姓名"></Input>
                 </Col>
-                <Col span="6">
+                <Col span="7">
                     <Input type="text" v-model="item.value2" placeholder="学生学号"></Input>
                 </Col>
-                <Col span="6">
+                <Col span="8">
                     <Select v-model="item.value3">
                         <Option v-for="item in studentList"  :value="item.value" :key="item">{{ item.label }}</Option>
                     </Select>
                 </Col>
-                <Col span="4" offset="1">
-                    <Button type="ghost" @click="handleRemove(index)">删除成员</Button>
+                <Col span="2" offset="1">
+                    <Button type="ghost" @click="handleRemove(index)">删除</Button>
                 </Col>
             </Row>
         </Form-item>
@@ -43,22 +43,31 @@
                 model1: 0,
                 studentList: [
                   {
-                    value: '0',
+                    value: '项目成员',
                     label: '项目成员'
                   },
                   {
-                    value: '1',
+                    value: '项目负责人',
                     label: '项目负责人'
                   }
                 ],
                 formDynamic: {
                     items: [
                         {
-                            value1: '',
-                            value2: '',
-                            value3: ''
-                            
-                        }
+                            value1: '刘希',
+                            value2: '201633660104',
+                            value3: '项目负责人'
+                        },
+                      {
+                        value1: '金明',
+                        value2: '201633334768',
+                        value3: '项目成员'
+                      },
+                      {
+                        value1: '高启迪',
+                        value2: '201633667432',
+                        value3: '项目成员'
+                      }
                     ]
                 }
             }
@@ -89,8 +98,3 @@
         }
     }
 </script>
-<style lang="less">
-	.ivu-input-type{
-		top:-14px;
-	}
-</style>

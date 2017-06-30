@@ -38,7 +38,7 @@
         <div style="padding: 20px 0 20px 20px;text-align: center;">
 
           <Button type="ghost" style="width: 150px">取消</Button>
-          <Button type="primary" style="width: 150px">提交</Button>
+          <Button type="primary" style="width: 150px" onclick="alert('提交成果')">提交</Button>
           <Button type="info" style="width: 150px">暂存</Button>
         </div>
       </div>
@@ -77,10 +77,15 @@
             render: (h, params) => {
               return h('Input', {
                 props: {
+                  value: params.row.no
                 },
                 on: {
-                  focus: (index) => {
-                    alert(1)
+                  input: (val) => {
+                    var tmp = this.$store.state.studentsForSearch[val]
+                    if (tmp !== undefined) {
+                      this.data2[params.index].name = tmp.name
+                      this.data2[params.index].no = tmp.no
+                    }
                   }
                 }
               })
@@ -92,7 +97,19 @@
           },
           {
             title: '成员工作量（小时）',
-            key: 'hours'
+            key: 'hours',
+            render: (h, params) => {
+              return h('Input', {
+                props: {
+                  value: params.row.hours
+                },
+                on: {
+                  input: (val) => {
+                    this.data2[params.index].hours = val
+                  }
+                }
+              })
+            }
           },
           {
             title: '工作简述',
@@ -100,6 +117,12 @@
             render: (h, params) => {
               return h('Input', {
                 props: {
+                  value: params.row.desc
+                },
+                on: {
+                  input: (val) => {
+                    this.data2[params.index].desc = val
+                  }
                 }
               })
             }
@@ -115,8 +138,8 @@
                     size: 'small'
                   },
                   on: {
-                    click: (index) => {
-                      this.data2.splice(index, 1)
+                    click: () => {
+                      this.data2.splice(params.index, 1)
                     }
                   }
                 }, '删除')
@@ -131,11 +154,15 @@
             render: (h, params) => {
               return h('Input', {
                 props: {
-                  placeholder: '输入参赛队伍编号'
+                  value: params.row.no
                 },
                 on: {
-                  focus: (index) => {
-                    alert(1)
+                  input: (val) => {
+                    var tmp = this.$store.state.teachersForSearch[val]
+                    if (tmp !== undefined) {
+                      this.data3[params.index].name = tmp.name
+                      this.data3[params.index].no = tmp.no
+                    }
                   }
                 }
               })
@@ -147,7 +174,19 @@
           },
           {
             title: '教师工作量（小时）',
-            key: 'hours'
+            key: 'hours',
+            render: (h, params) => {
+              return h('Input', {
+                props: {
+                  value: params.row.hours
+                },
+                on: {
+                  input: (val) => {
+                    this.data3[params.index].hours = val
+                  }
+                }
+              })
+            }
           },
           {
             title: '工作简述',
@@ -155,7 +194,12 @@
             render: (h, params) => {
               return h('Input', {
                 props: {
-                  placeholder: '输入获得奖项'
+                  value: params.row.desc
+                },
+                on: {
+                  input: (val) => {
+                    this.data3[params.index].desc = val
+                  }
                 }
               })
             }
@@ -183,14 +227,14 @@
         data1: [
           {
             name: '项目编号',
-            content: '201604010128',
+            content: '201609118762',
             cellClassName: {
               name: 'demo-table-info-cell-age'
             }
           },
           {
             name: '项目名称',
-            content: '全国大学生数字媒体作品竞赛 <a>查看</a>'
+            content: '中国大学生“互联网+”应用创新大赛'
           },
           {
             name: '项目类型',
@@ -198,24 +242,30 @@
           },
           {
             name: '项目负责人',
-            content: '刘云霄'
+            content: '曹阳'
           }
         ],
         data2: [
           {
-            no: '',
-            name: '',
+            no: '201433660105',
+            name: '李琴',
+            hours: '',
+            desc: ''
+          },
+          {
+            no: '201533471833',
+            name: '谢云',
+            hours: '',
+            desc: ''
+          },
+          {
+            no: '201433457441',
+            name: '梁超',
             hours: '',
             desc: ''
           }
         ],
         data3: [
-          {
-            no: '',
-            name: '',
-            hours: '',
-            desc: ''
-          }
         ]
       }
     },
@@ -235,7 +285,7 @@
           hours: '',
           desc: ''
         })
-      },
+      }
     }
   }
 </script>

@@ -67,11 +67,16 @@
             render: (h, params) => {
               return h('Input', {
                 props: {
-                  placeholder: '输入参赛队伍编号'
+                  placeholder: '输入参赛队伍编号',
+                  value: params.row.teamsNo
                 },
                 on: {
-                  focus: (index) => {
-                    alert(1)
+                  input: (val) => {
+                    if (val === '20161109') {
+                      this.data2[params.index].teams = '李琴，201433660105；谢云，201533471833；梁超，201433457441'
+                      this.data2[params.index].teachers = '田尤文，200317483'
+                      this.data2[params.index].teamsNo = 20161109
+                    }
                   }
                 }
               })
@@ -89,11 +94,77 @@
             title: '获得奖项',
             key: 'award',
             render: (h, params) => {
-              return h('Input', {
-                props: {
-                  placeholder: '输入获得奖项'
-                }
-              })
+              return h('div', [
+                h('Select', {
+                  style: {
+                    'width': '120px',
+                    'padding-right': '16px'
+                  },
+                  on: {
+                    change: (val) => {
+                      alert(val)
+                      this.data2[params.index].award.key1 = val
+                    }
+                  }
+                }, [
+                  h('Option', {
+                    props: {
+                      value: '国家级'
+                    }
+                  }, '国家级'),
+                  h('Option', {
+                    props: {
+                      value: '省级'
+                    }
+                  }, '省级'),
+                  h('Option', {
+                    props: {
+                      value: '地市级'
+                    }
+                  }, '地市级'),
+                  h('Option', {
+                    props: {
+                      value: '其他'
+                    }
+                  }, '其他')
+                ]),
+                h('Select', {
+                  style: {
+                    'width': '120px'
+                  }
+                }, [
+                  h('Option', {
+                    props: {
+                      value: '特等奖'
+                    }
+                  }, '特等奖'),
+                  h('Option', {
+                    props: {
+                      value: '一等奖'
+                    }
+                  }, '一等奖'),
+                  h('Option', {
+                    props: {
+                      value: '二等奖'
+                    }
+                  }, '二等奖'),
+                  h('Option', {
+                    props: {
+                      value: '三等奖'
+                    }
+                  }, '三等奖'),
+                  h('Option', {
+                    props: {
+                      value: '四等奖'
+                    }
+                  }, '四等奖'),
+                  h('Option', {
+                    props: {
+                      value: '其他'
+                    }
+                  }, '其他')
+                ])
+              ])
             }
           },
           {
@@ -113,8 +184,8 @@
                     size: 'small'
                   },
                   on: {
-                    click: (index) => {
-                      this.data2.splice(index, 1)
+                    click: () => {
+                      this.data2.splice(params.index, 1)
                     }
                   }
                 }, '删除')
@@ -125,14 +196,14 @@
         data1: [
           {
             name: '项目编号',
-            content: '201604010128',
+            content: '201609118762',
             cellClassName: {
               name: 'demo-table-info-cell-age'
             }
           },
           {
             name: '项目名称',
-            content: '全国大学生数字媒体作品竞赛 <a>查看</a>'
+            content: '中国大学生“互联网+”应用创新大赛'
           },
           {
             name: '项目类型',
@@ -140,15 +211,10 @@
           },
           {
             name: '项目负责人',
-            content: '刘云霄'
+            content: '曹阳'
           }
         ],
         data2: [
-          {
-            teams: '',
-            teachers: '',
-            award: ''
-          }
         ]
       }
     },
@@ -157,7 +223,10 @@
         this.data2.push({
           teams: '',
           teachers: '',
-          award: ''
+          award: {
+            key1: '',
+            key2: ''
+          }
         })
       },
       blur2 () {
