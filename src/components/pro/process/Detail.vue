@@ -19,68 +19,60 @@
           <Table :columns="columns1" :data="data1"></Table>
         </div>
 
-
+      <Modal
+        title="对话框标题"
+        v-model="modal8"
+        :mask-closable="false" @on-cancel="onCancel" @on-ok="handleSubmit">
+        <Form ref="formDynamic" :model="formDynamic" :label-width="80">
+          <Form-item
+            v-for="(item, index) in formDynamic.items"
+            :key="item"
+            :label="'导师' + (index + 1)"
+            :prop="'items.' + index + '.value'"
+            :rules="{required: true, message: '导师' + (index + 1) +'不能为空', trigger: 'blur'}">
+            <Row>
+              <Col span="18">
+              <Input type="text" v-model="item.value" placeholder="请输入..." ></Input>
+              </Col>
+              <Col span="4" offset="1">
+              <Button type="ghost" @click="handleRemove(index)">删除</Button>
+              </Col>
+            </Row>
+          </Form-item>
+          <Form-item>
+            <Row>
+              <Col span="12">
+              <Button type="dashed" long @click="handleAdd" icon="plus-round">新增</Button>
+              </Col>
+            </Row>
+          </Form-item>
+        </Form>
+      </Modal>
     </section>
   </Workare>
 </template>
 <script>
 
   import Workare from '../../Workare'
-  import AlertFrom from './Form'
   import AlertFrom2 from './Form2'
   export default{
     name: 'proProcess1',
     components: {
-      Workare,
-      AlertFrom
+      Workare
     },
     data () {
       return {
+        modal8: false,
+        formDynamic: {
+          items: [
+            {
+              value: ''
+            }
+          ]
+        },
         item: {
           title: '参赛学生列表'
         },
-        collegeList: [
-          {
-            value: '0',
-            label: '全部申请学院'
-          },
-          {
-            value: '1',
-            label: '计算机'
-          },
-          {
-            value: '2',
-            label: '机电'
-          },
-          {
-            value: '3',
-            label: '通信'
-          },
-          {
-            value: '4',
-            label: '机械'
-          },
-          {
-            value: '5',
-            label: '经贸'
-          }
-        ],
-        model1: '0',
-        scale: [
-          {
-            value: '0',
-            label: '不限校内校外项目'
-          },
-          {
-            value: '1',
-            label: '校内项目'
-          },
-          {
-            value: '2',
-            label: '校外项目'
-          }
-        ],
-        model2: '0',
         columns1: [
           {
             title: '编号',
@@ -95,19 +87,19 @@
           },
           {
             title: '参赛人数',
-            key: 'num'
+            key: 'number'
           },
           {
             title: '有无指导教师',
-            key: 'mentorFlag'
+            key: 'hasTeacher'
           },
           {
             title: '指导教师',
-            key: 'mentor'
+            key: 'teacher'
           },
           {
             title: '指导教师职称',
-            key: 'mentorRank'
+            key: 'title'
           },
           {
             title: '操作',
@@ -127,12 +119,7 @@
                     },
                     on: {
                       click: () => {
-                        this.$Modal.confirm({
-                          title: '添加',
-                          render: (h) => {
-                            return h(AlertFrom)
-                          }
-                        })
+                        this.modal8 = true
                       }
                     }
                   }, '分配导师')
@@ -165,28 +152,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '1',
-            team: '李梦204005；少奇2355',
-            num: '3',
-            mentorFlag: '有',
-            mentor: '少奇',
-            mentorRank: '讲师'
-
-            // teacher: '李雨欣',
-            // colleague: '计算机',
-            // file: 1
-          },
-          {
-            code: '2',
-            team: '李梦204005；少奇2355',
-            num: '3',
-            mentorFlag: '有',
-            mentor: '少奇',
-            mentorRank: '讲师'
-          }
-        ]
+        data1: this.$store.state.competitionTeams[this.$route.params.id]
       }
     },
     methods: {
@@ -240,6 +206,35 @@
             })
           }
         })
+      },
+      handleSubmit (e) {
+        this.$refs['formDynamic'].validate((valid) => {
+          var res = ''
+          if (valid) {
+            for (var x in this.formDynamic.items) {
+              var tmp = this.formDynamic.items[x]
+              if (this.$store.state.teachersForSearch[tmp.value] === undefined) {
+                alert('无法查到添加的老师')
+                return
+              }
+              res = this.$store.state.teachersForSearch[tmp.value] + ','
+            }
+            this.$store.commit('ADD_PRO_TEACHE', res)
+          } else {
+            this.$Message.error('表单验证失败!')
+          }
+        })
+      },
+      onCancel () {
+        this.$refs['formDynamic'].resetFields()
+      },
+      handleAdd () {
+        this.formDynamic.items.push({
+          value: ''
+        })
+      },
+      handleRemove (index) {
+        this.formDynamic.items.splice(index, 1)
       }
     }
   }
@@ -292,8 +287,8 @@
     top:60px;
     width:500px;
   }
-  .ivu-modal-body input{
-    top:15px;
-  }
+  /*.ivu-modal-body input{*/
+    /*top:15px;*/
+  /*}*/
 
 </style>

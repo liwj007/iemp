@@ -64,7 +64,7 @@
           <Table border :columns="columns9" :data="data2" disabled-hover :show-header="showHeader"></Table>
         </div>
       </div>
-      <div style = "display: bolck; width: 100%; height: 50px; overflow: hidden; padding-left:40%">        
+      <div style = "display: bolck; width: 100%; height: 50px; overflow: hidden; padding-left:40%">
         <div class = "floating">
           <Button type="default">取消</Button>
         </div>
@@ -73,7 +73,7 @@
         </div>
         <div class = "floating">
           <Button type="primary">提交</Button>
-        </div>       
+        </div>
       </div>
     </section>
   </Workare>
@@ -119,7 +119,8 @@
           },
           {
             name: '项目名称',
-            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+//            content: '<Input v-model="value5" type = "textarea" style="width: 300px"></Input>'
+
           },
           {
             name: '项目类型',

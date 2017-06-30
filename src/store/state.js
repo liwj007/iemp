@@ -1,4 +1,38 @@
 const state = {
+  teachersForSearch: {
+    '201513063': {'id': '1', 'no': '201513063', 'name': '林雪丽', 'college': '工商管理学院', 'title': '讲师', 'duty': '专任教师', 'phone': '13000166065', 'awardNum': '0'},
+    '201516509': {'id': '2', 'no': '201516509', 'name': '刘永策', 'college': '工商管理学院', 'title': '副教授', 'duty': '专任教师', 'phone': '13105207085', 'awardNum': '2'},
+    '201512829': {'id': '3', 'no': '201512829', 'name': '柳中杰', 'college': '工商管理学院', 'title': '教授', 'duty': '专任教师', 'phone': '13205355230', 'awardNum': '8'},
+    '201516967': {'id': '4', 'no': '201516967', 'name': '赵瑞芳', 'college': '工商管理学院', 'title': '研究员', 'duty': '专职科研', 'phone': '13405355976', 'awardNum': '2'},
+    '201511400': {'id': '5', 'no': '201511400', 'name': '魏春洋', 'college': '工商管理学院', 'title': '助理研究员', 'duty': '专职科研', 'phone': '13405452102', 'awardNum': '4'},
+    '201511327': {'id': '6', 'no': '201511327', 'name': '杨晓龙', 'college': '工商管理学院', 'title': '副研究员', 'duty': '专职科研', 'phone': '13506453614', 'awardNum': '3'},
+    '201514718': {'id': '7', 'no': '201514718', 'name': '杨秀文', 'college': '工商管理学院', 'title': '副教授', 'duty': '专任教师', 'phone': '13800536652', 'awardNum': '7'},
+    '201513540': {'id': '8', 'no': '201513540', 'name': '李彦', 'college': '工商管理学院', 'title': '副教授', 'duty': '专任教师', 'phone': '13906454009', 'awardNum': '8'},
+    '201512921': {'id': '9', 'no': '201512921', 'name': '吕如敏', 'college': '工商管理学院', 'title': '副教授', 'duty': '专任教师', 'phone': '13953511714', 'awardNum': '0'},
+    '201513515': {'id': '10', 'no': '201513515', 'name': '孙晓羽', 'college': '工商管理学院', 'title': '副教授', 'duty': '专任教师', 'phone': '13953523797', 'awardNum': '2'},
+    '201514378': {'id': '11', 'no': '201514378', 'name': '陈玉明', 'college': '工商管理学院', 'title': '副教授', 'duty': '专任教师', 'phone': '13854513588', 'awardNum': '3'},
+    '201512567': {'id': '12', 'no': '201512567', 'name': '马金智', 'college': '工商管理学院', 'title': '讲师', 'duty': '专任教师', 'phone': '13864581327', 'awardNum': '5'},
+    '201517218': {'id': '13', 'no': '201517218', 'name': '李中东', 'college': '工商管理学院', 'title': '讲师', 'duty': '专任教师', 'phone': '13884646088', 'awardNum': '0'},
+    '201516414': {'id': '14', 'no': '201516414', 'name': '王发明', 'college': '工商管理学院', 'title': '教授', 'duty': '专任教师', 'phone': '13884937534', 'awardNum': '2'},
+    '201515547': {'id': '15', 'no': '201515547', 'name': '周蕾', 'college': '工商管理学院', 'title': '教授', 'duty': '专任教师', 'phone': '13791227873', 'awardNum': '7'},
+    '200211234': {'id': '16', 'no': '200211234', 'name': '曹阳', 'college': '计算机科学与技术学院', 'title': '讲师', 'duty': '专任教师', 'phone': '13105207743', 'awardNum': '2'}
+  },
+  competitionTeams: {
+    '201612374852': [
+      {'code': '20170251', 'team': '来了', 'number': '3', 'hasTeacher': '无', 'title': ''},
+      {'code': '20170252', 'team': 'dream life', 'number': '7', 'hasTeacher': '有', 'teacher': '隋金雪', 'title': '讲师'},
+      {'code': '20170253', 'team': '安全线 ', 'number': '2', 'hasTeacher': '有', 'teacher': '杨莉', 'title': '讲师'},
+      {'code': '20170254', 'team': '薛定谔的蛋糕', 'number': '4', 'hasTeacher': '无', 'teacher': '　', 'title': ''},
+      {'code': '20170255', 'team': 'Say what all late', 'number': '5', 'hasTeacher': '有', 'teacher': '谭玲玲', 'title': '讲师'},
+      {'code': '20170256', 'team': '荔枝王', 'number': '2', 'hasTeacher': '有', 'teacher': '张天则', 'title': '讲师'},
+      {'code': '20170257', 'team': 'item', 'number': '4', 'hasTeacher': '有', 'teacher': '张杰', 'title': '讲师'},
+      {'code': '20170258', 'team': 'VAULT', 'number': '6', 'hasTeacher': '有', 'teacher': '王乐杰', 'title': '讲师'},
+      {'code': '20170259', 'team': '一己', 'number': '1', 'hasTeacher': '有', 'teacher': '庞清乐', 'title': '讲师'}
+    ]
+  },
+  applyingProjects: [
+    {'code': '201612374852', 'name': '全国大学生网络技术大赛', 'type': '校外项目', 'time': '2017-5-14至2017-7-13'}
+  ],
   username: 'Admin-233',
   applyList: [
     {'code': '201705040069', 'name': '“ORACLE OAEC”杯校园软件与网页设计大赛', 'type': '校外项目', 'admin': '曹阳', 'teacher': '熊杰希', 'college': '计算机科学与技术学院'}

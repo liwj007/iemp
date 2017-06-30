@@ -25,7 +25,7 @@
     <section slot="footer">
         <div  class="filter">
           <div class="title">报名中的项目</div>
-          <!-- 
+          <!--
           <div>
             <Select v-model="model1" style="width:200px">
               <Option v-for="item in collegeList" :value="item.value" :key="item">{{ item.label }}</Option>
@@ -38,7 +38,7 @@
           </div>
           <div>
             <Button type="info">筛选</Button>
-          </div> 
+          </div>
           -->
           <div class="right" style="display:inline-block">
           <div class="right">
@@ -65,48 +65,6 @@
     },
     data () {
       return {
-        collegeList: [
-          {
-            value: '0',
-            label: '全部申请学院'
-          },
-          {
-            value: '1',
-            label: '计算机'
-          },
-          {
-            value: '2',
-            label: '机电'
-          },
-          {
-            value: '3',
-            label: '通信'
-          },
-          {
-            value: '4',
-            label: '机械'
-          },
-          {
-            value: '5',
-            label: '经贸'
-          }
-        ],
-        model1: '0',
-        scale: [
-          {
-            value: '0',
-            label: '不限校内校外项目'
-          },
-          {
-            value: '1',
-            label: '校内项目'
-          },
-          {
-            value: '2',
-            label: '校外项目'
-          }
-        ],
-        model2: '0',
         columns1: [
           {
             title: '项目编号',
@@ -152,29 +110,7 @@
             }
           }
         ],
-        data1: [
-          {
-            code: '201611688006',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            admin: '起飞 等3n人',
-            time: ' 2017-5-06至2017-02-03'
-
-            // teacher: '李雨欣',
-            // colleague: '计算机',
-            // file: 1
-          },
-          {
-            code: '201611688007',
-            name: '基于大数据的酒店宴会定制化服务的研究',
-            type: '校内项目',
-            time: ' 2017-5-16至2017-02-03'
-            // admin: '起飞 等3n人',
-            // teacher: '李雨欣',
-            // colleague: '计算机',
-            // file: 0
-          }
-        ]
+        data1: this.$store.state.applyingProjects
       }
     },
     methods: {

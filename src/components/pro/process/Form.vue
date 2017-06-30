@@ -22,47 +22,47 @@
                 </Col>
             </Row>
         </Form-item>
-        <Form-item>
-            <Button type="primary" @click="handleSubmit('formDynamic')">提交</Button>
-            <Button type="ghost" @click="handleReset('formDynamic')" style="margin-left: 8px">重置</Button>
-        </Form-item>
+        <!--<Form-item>-->
+            <!--<Button type="primary" @click="handleSubmit('formDynamic')">提交</Button>-->
+            <!--<Button type="ghost" @click="handleReset('formDynamic')" style="margin-left: 8px">重置</Button>-->
+        <!--</Form-item>-->
     </Form>
 </template>
 <script>
     export default {
-        data () {
-            return {
-                formDynamic: {
-                    items: [
-                        {
-                            value: ''
-                        }
-                    ]
-                }
-            }
-        },
-        methods: {
-            handleSubmit (name) {
-                this.$refs[name].validate((valid) => {
-                    if (valid) {
-                        this.$Message.success('提交成功!');
-                    } else {
-                        this.$Message.error('表单验证失败!');
-                    }
-                })
-            },
-            handleReset (name) {
-                this.$refs[name].resetFields();
-            },
-            handleAdd () {
-                this.formDynamic.items.push({
-                    value: ''
-                });
-            },
-            handleRemove (index) {
-                this.formDynamic.items.splice(index, 1);
-            }
+      data () {
+        return {
+          formDynamic: {
+            items: [
+              {
+                value: ''
+              }
+            ]
+          }
         }
+      },
+      methods: {
+        handleSubmit (name) {
+          this.$refs[name].validate((valid) => {
+            if (valid) {
+              this.$Message.success('提交成功!')
+            } else {
+              this.$Message.error('表单验证失败!')
+            }
+          })
+        },
+        handleReset (name) {
+          this.$refs[name].resetFields()
+        },
+        handleAdd () {
+          this.formDynamic.items.push({
+            value: ''
+          })
+        },
+        handleRemove (index) {
+          this.formDynamic.items.splice(index, 1)
+        }
+      }
     }
 </script>
 <style lang="less">

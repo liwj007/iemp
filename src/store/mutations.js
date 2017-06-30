@@ -21,6 +21,10 @@ const mutations = {
   },
   ADD_COLLEGE (state, item) {
     state.colleges.push(item)
+  },
+  ADD_PRO_TEACHE (state, item) {
+    state.competitionTeams['201612374852'][0].teacher = item
+    state.competitionTeams['201612374852'][0].title = '讲师'
   }
 }
 
